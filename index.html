@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>คู่มือร้านอร่อยเชียงใหม่ 🌊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sea-deep:#1c6fa8;
+    --sea:#3fa9dc;
+    --sea-light:#8fd3f4;
+    --sky:#eef8fc;
+    --sky-2:#f7fbfd;
+    --sand:#fffaf1;
+    --white:#ffffff;
+    --text:#1f3b4d;
+    --muted:#5f7d8f;
+    --line:#dcedf4;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Prompt','Mitr',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:linear-gradient(180deg,var(--sky) 0%,var(--sky-2) 400px,#ffffff 100%);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:0 20px 60px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    text-align:center;
+    padding:56px 20px 28px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .tag{
+    display:inline-block;
+    background:var(--white);
+    color:var(--sea-deep);
+    font-size:13px;
+    padding:6px 14px;
+    border-radius:999px;
+    box-shadow:0 2px 10px rgba(63,169,220,0.15);
+    margin-bottom:16px;
+    letter-spacing:.3px;
+  }
+  .hero h1{
+    font-family:'Mitr',sans-serif;
+    font-weight:500;
+    font-size:30px;
+    margin:0 0 10px;
+    color:var(--sea-deep);
+  }
+  .hero p{
+    color:var(--muted);
+    font-size:15px;
+    max-width:420px;
+    margin:0 auto;
+  }
+  .wave{
+    display:block;
+    width:100%;
+    height:60px;
+    margin-top:28px;
+  }
+
+  /* ---------- NAV PILLS ---------- */
+  .nav{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding:4px 4px 24px;
+    scrollbar-width:none;
+  }
+  .nav::-webkit-scrollbar{display:none;}
+  .nav a{
+    flex:0 0 auto;
+    background:var(--white);
+    border:1px solid var(--line);
+    color:var(--sea-deep);
+    text-decoration:none;
+    font-size:13.5px;
+    padding:9px 15px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+
+  /* ---------- SECTION ---------- */
+  .section{margin-top:38px;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    margin-bottom:14px;
+    scroll-margin-top:16px;
+  }
+  .section-head h2{
+    font-family:'Mitr',sans-serif;
+    font-weight:500;
+    font-size:19px;
+    margin:0;
+    color:var(--sea-deep);
+  }
+  .section-head span.count{
+    color:var(--muted);
+    font-size:13px;
+  }
+  .section-note{
+    color:var(--muted);
+    font-size:13.5px;
+    margin:-6px 0 16px;
+  }
+
+  /* ---------- CARD ---------- */
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:18px 20px;
+    margin-bottom:14px;
+    box-shadow:0 3px 14px rgba(28,111,168,0.06);
+  }
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:8px;
+  }
+  .card-top h3{
+    font-size:16.5px;
+    margin:0;
+    font-weight:600;
+  }
+  .badges{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 10px;}
+  .badge{
+    font-size:11.5px;
+    background:var(--sky);
+    color:var(--sea-deep);
+    padding:3px 9px;
+    border-radius:999px;
+    border:1px solid var(--line);
+  }
+  .badge.spicy{background:#fff1ec;color:#c0522f;border-color:#ffe1d3;}
+  .badge.sea{background:#eaf7ff;color:var(--sea-deep);border-color:#d3edf9;}
+  .review{
+    font-size:14px;
+    color:#3c5769;
+    margin:0 0 12px;
+  }
+  .meta{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:14px;
+  }
+  .actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .btn{
+    text-decoration:none;
+    font-size:13px;
+    padding:9px 14px;
+    border-radius:12px;
+    font-weight:500;
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+  }
+  .btn-primary{background:var(--sea);color:#fff;}
+  .btn-outline{background:#fff;color:var(--sea-deep);border:1px solid var(--sea-light);}
+  .btn-text{color:var(--muted);border:1px solid var(--line);background:var(--sky);}
+
+  /* ---------- FEATURED ---------- */
+  .featured{
+    background:linear-gradient(160deg,var(--sea-deep),var(--sea) 70%);
+    color:#fff;
+    border-radius:20px;
+    padding:24px 22px;
+    margin-bottom:14px;
+    position:relative;
+    overflow:hidden;
+  }
+  .featured .badge{background:rgba(255,255,255,0.18);color:#fff;border-color:rgba(255,255,255,0.25);}
+  .featured h3{font-size:18px;margin:0 0 6px;}
+  .featured .review{color:rgba(255,255,255,0.92);}
+  .featured .meta{color:rgba(255,255,255,0.85);}
+  .featured .btn-outline{background:rgba(255,255,255,0.12);color:#fff;border-color:rgba(255,255,255,0.5);}
+  .featured .btn-text{background:rgba(255,255,255,0.12);color:#fff;border-color:rgba(255,255,255,0.3);}
+  .featured .btn-primary{background:#fff;color:var(--sea-deep);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    text-align:center;
+    margin-top:52px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    color:var(--muted);
+    font-size:13px;
+  }
+  footer .sign{
+    font-family:'Mitr',sans-serif;
+    color:var(--sea-deep);
+    font-size:15px;
+    margin-bottom:6px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="tag">🌊 Chiang Mai Food Guide</span>
+    <h1>คู่มือร้านอร่อยเชียงใหม่</h1>
+    <p>รวมร้านที่คัดมาให้แล้ว เผื่อวันไหนอยากแวะกิน ไม่ต้องเสิร์ชเอง — กดดูแผนที่ กดนำทางได้เลย</p>
+    <svg class="wave" viewBox="0 0 600 60" preserveAspectRatio="none">
+      <path d="M0,30 C100,60 200,0 300,30 C400,60 500,0 600,30 L600,60 L0,60 Z" fill="#3fa9dc" opacity="0.25"/>
+      <path d="M0,40 C100,15 200,55 300,35 C400,15 500,55 600,35 L600,60 L0,60 Z" fill="#3fa9dc" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <div class="nav">
+    <a href="#sea">🌊 ฟีลทะเล</a>
+    <a href="#mala">🌶️ หมาล่า</a>
+    <a href="#curry">🍛 แกงกะหรี่</a>
+    <a href="#chicken">🍗 ไก่ทอด</a>
+    <a href="#khaosoi">🍜 ข้าวซอย</a>
+    <a href="#faraway">🚗 ทริปไกลหน่อย</a>
+  </div>
+
+  <!-- ===== SEA VIBE ===== -->
+  <div class="section" id="sea">
+    <div class="section-head"><h2>🌊 ฟีลทะเล (แบบเชียงใหม่)</h2></div>
+    <p class="section-note">เชียงใหม่ไม่มีทะเลจริงๆ แต่มีที่นี่ที่คนเรียกกันว่า "ทะเลเชียงใหม่"</p>
+
+    <div class="featured">
+      <div class="badges"><span class="badge">หาดทรายจำลอง</span><span class="badge">เล่นน้ำได้</span></div>
+      <h3>ห้วยตึงเฒ่า</h3>
+      <p class="review">อ่างเก็บน้ำกลางหุบเขา มีหาดทรายริมน้ำให้เดินเล่น นั่งชิล เช่าห่วงยาง เรือพาย มีร้านอาหารรอบๆ บรรยากาศโปร่งลมเย็น เหมาะกับคนที่คิดถึงทะเลแต่ไม่อยากขับรถไกล</p>
+      <div class="meta">
+        <span>🕒 เปิดทุกวัน 06:30–18:00 น.</span>
+        <span>💵 ค่าเข้าคนไทย 20 บาท</span>
+        <span>📍 ต.ดอนแก้ว อ.แม่ริม จ.เชียงใหม่</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%AB%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%95%E0%B8%B6%E0%B8%87%E0%B9%80%E0%B8%92%E0%B9%88%E0%B8%B2%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B4%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">📍 ดูแผนที่</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%AB%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%95%E0%B8%B6%E0%B8%87%E0%B9%80%E0%B8%92%E0%B9%88%E0%B8%B2%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B4%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">🧭 นำทาง</a>
+        <a class="btn btn-text" href="https://thailandtourismdirectory.go.th/attraction/292" target="_blank" rel="noopener">ℹ️ ข้อมูลเพิ่มเติม</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MALA ===== -->
+  <div class="section" id="mala">
+    <div class="section-head"><h2>🌶️ หมาล่า</h2></div>
+
+    <div class="card">
+      <div class="card-top"><h3>หม่าล่า 4 แยก (สาขาศรีปิงเมือง)</h3></div>
+      <div class="badges"><span class="badge spicy">ต้นตำรับ</span><span class="badge">ปรุงสุกทุกจาน</span></div>
+      <p class="review">ร้านหมาล่าต้นตำรับที่คนเชียงใหม่พูดถึงกันมากที่สุด เลือกวัตถุดิบเองได้ตามใจ มีให้เลือกทั้งแบบต้มและย่าง บรรยากาศร้านกว้าง นั่งสบาย เหมาะกับมื้อเย็น</p>
+      <div class="meta">
+        <span>🕒 เปิดทุกวัน 17:30–00:00 น.</span>
+        <span>📍 ถ.ศรีปิงเมือง ต.หายยา อ.เมืองเชียงใหม่ (ตรงข้าม 7-11 ศรีปิงเมือง)</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%204%20%E0%B9%81%E0%B8%A2%E0%B8%81%20%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%9B%E0%B8%B4%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">📍 ดูแผนที่</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%204%20%E0%B9%81%E0%B8%A2%E0%B8%81%20%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%9B%E0%B8%B4%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">🧭 นำทาง</a>
+        <a class="btn btn-text" href="https://www.wongnai.com/restaurants/mha-la-4-yeak" target="_blank" rel="noopener">ℹ️ รีวิวเพิ่มเติม</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><h3>ควันจุ๊งจุ๊ง หมาล่า (สาขารวมโชค)</h3></div>
+      <div class="badges"><span class="badge spicy">เผ็ดถึงใจ</span><span class="badge">เมนูซี่โครงหมูเด็ด</span></div>
+      <p class="review">หมาล่าปิ้งย่างที่คนรีวิวชมเรื่องความหอมของเครื่องเทศ เมนูแนะนำคือซี่โครงหมูกับมันฝรั่งเสียบไม้ บรรยากาศร้านเป็นกันเอง เหมาะกับมื้อค่ำแบบชิลๆ</p>
+      <div class="meta">
+        <span>🕒 เปิดทุกวัน 18:00–00:00 น.</span>
+        <span>📍 ต.ฟ้าฮ่าม อ.เมืองเชียงใหม่</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%84%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%88%E0%B8%B8%E0%B9%8A%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%8A%E0%B8%87%20%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%20%E0%B8%9F%E0%B9%89%E0%B8%B2%E0%B8%AE%E0%B9%88%E0%B8%B2%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">📍 ดูแผนที่</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%84%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%88%E0%B8%B8%E0%B9%8A%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%8A%E0%B8%87%20%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%20%E0%B8%9F%E0%B9%89%E0%B8%B2%E0%B8%AE%E0%B9%88%E0%B8%B2%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">🧭 นำทาง</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CURRY ===== -->
+  <div class="section" id="curry">
+    <div class="section-head"><h2>🍛 แกงกะหรี่</h2></div>
+    <p class="section-note">เผื่อวันไหนไม่อยากทำกินเอง</p>
+
+    <div class="card">
+      <div class="card-top"><h3>Santoku Japanese Hot Kitchen</h3></div>
+      <div class="badges"><span class="badge">แกงกะหรี่ญี่ปุ่น</span><span class="badge">ปรุงสุก</span></div>
+      <p class="review">ร้านอาหารญี่ปุ่นที่ขึ้นชื่อเรื่องแกงกะหรี่รสเข้มข้น เสิร์ฟร้อนๆ พร้อมข้าว บรรยากาศร้านกะทัดรัด อบอุ่น เหมาะกับมื้อเย็นแบบไม่รีบ</p>
+      <div class="meta">
+        <span>🕒 17:00–22:00 น. (หยุดวันจันทร์)</span>
+        <span>📍 อ.เมืองเชียงใหม่</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Santoku%20Japanese%20Hot%20Kitchen%20Chiang%20Mai" target="_blank" rel="noopener">📍 ดูแผนที่</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=Santoku%20Japanese%20Hot%20Kitchen%20Chiang%20Mai" target="_blank" rel="noopener">🧭 นำทาง</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><h3>Crazy Curry คลั่งแกงกะหรี่ญี่ปุ่น</h3></div>
+      <div class="badges"><span class="badge">เมนูแกงกะหรี่ 10+ แบบ</span></div>
+      <p class="review">ร้านเฉพาะทางแกงกะหรี่ญี่ปุ่น น้ำแกงเข้มข้นจาก base ไก่ มีให้เลือกหลายระดับความเผ็ด เหมาะกับคนชอบลองรสชาติใหม่ๆ</p>
+      <div class="meta">
+        <span>📍 อ.เมืองเชียงใหม่</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Crazy%20Curry%20%E0%B8%84%E0%B8%A5%E0%B8%B1%E0%B9%88%E0%B8%87%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%81%E0%B8%B0%E0%B8%AB%E0%B8%A3%E0%B8%B5%E0%B9%88%E0%B8%8D%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%B8%E0%B9%88%E0%B8%99%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">📍 ดูแผนที่</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=Crazy%20Curry%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">🧭 นำทาง</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FRIED CHICKEN ===== -->
+  <div class="section" id="chicken">
+    <div class="section-head"><h2>🍗 ไก่ทอด</h2></div>
+
+    <div class="card">
+      <div class="card-top"><h3>Bonchon เซ็นทรัลเฟสติวัล เชียงใหม่</h3></div>
+      <div class="badges"><span class="badge">ไก่ทอดเกาหลี</span><span class="badge">สาขาแรกในเชียงใหม่</span></div>
+      <p class="review">สาขาแรกของบอนชอนในเชียงใหม่ ไก่ทอดกรอบนอกนุ่มใน ซอสให้เลือกทั้งซอสหวานและซอสเผ็ด อยู่ในห้างเดินทางสะดวก มีอีกสาขาที่นิ่มซิตี้ด้วย</p>
+      <div class="meta">
+        <span>📍 ศูนย์การค้าเซ็นทรัลเฟสติวัล เชียงใหม่</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Bonchon%20Central%20Festival%20Chiang%20Mai" target="_blank" rel="noopener">📍 ดูแผนที่</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=Bonchon%20Central%20Festival%20Chiang%20Mai" target="_blank" rel="noopener">🧭 นำทาง</a>
+        <a class="btn btn-text" href="https://www.bonchonthailand.com/locations" target="_blank" rel="noopener">ℹ️ สาขาทั้งหมด</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== KHAO SOI ===== -->
+  <div class="section" id="khaosoi">
+    <div class="section-head"><h2>🍜 ข้าวซอย</h2></div>
+    <p class="section-note">ร้านเล็กๆ ของแท้ ที่คนเชียงใหม่กินกันมานาน</p>
+
+    <div class="card">
+      <div class="card-top"><h3>ข้าวซอยเสมอใจ</h3></div>
+      <div class="badges"><span class="badge">ร้านเล็กน่ารัก</span><span class="badge">เปิดมา 30+ ปี</span></div>
+      <p class="review">ร้านข้าวซอยเก่าแก่ น้ำแกงเข้มข้นกลมกล่อม บรรยากาศร้านเรียบง่ายสบายๆ แบบร้านท้องถิ่นแท้ๆ เหมาะกับมื้อเที่ยง</p>
+      <div class="meta">
+        <span>🕒 เปิดทุกวัน 08:00–17:00 น.</span>
+        <span>📍 391 ต.ฟ้าฮ่าม อ.เมืองเชียงใหม่</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AA%E0%B8%A1%E0%B8%AD%E0%B9%83%E0%B8%88%20391%20%E0%B8%9F%E0%B9%89%E0%B8%B2%E0%B8%AE%E0%B9%88%E0%B8%B2%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">📍 ดูแผนที่</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AA%E0%B8%A1%E0%B8%AD%E0%B9%83%E0%B8%88%20391%20%E0%B8%9F%E0%B9%89%E0%B8%B2%E0%B8%AE%E0%B9%88%E0%B8%B2%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">🧭 นำทาง</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><h3>ข้าวซอยแม่สาย</h3></div>
+      <div class="badges"><span class="badge">ร้านเล็กน่ารัก</span><span class="badge">คิวยาวแต่คุ้ม</span></div>
+      <p class="review">เส้นข้าวซอยกรอบเป็นเอกลักษณ์ รสชาติกลมกล่อม เป็นร้านเล็กๆ ที่คนต่อคิวกันเยอะ แนะนำให้ไปช่วงเช้าจะไม่ต้องรอนาน</p>
+      <div class="meta">
+        <span>🕒 จันทร์–เสาร์ 08:00–16:00 น.</span>
+        <span>📍 29/1 ซ.ราชพฤกษ์ ต.ช้างเผือก อ.เมืองเชียงใหม่</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2%20%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%9C%E0%B8%B7%E0%B8%AD%E0%B8%81%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">📍 ดูแผนที่</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2%20%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%9C%E0%B8%B7%E0%B8%AD%E0%B8%81%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">🧭 นำทาง</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FAR TRIP ===== -->
+  <div class="section" id="faraway">
+    <div class="section-head"><h2>🚗 ถ้ามีโอกาสไปไกลหน่อย</h2></div>
+    <p class="section-note">อยู่เชียงราย ไม่ใช่เชียงใหม่ ห่างไปประมาณ 3 ชม. — เก็บไว้เผื่อวันไหนอยากไปทริปยาว</p>
+
+    <div class="card">
+      <div class="card-top"><h3>น้ำเงี้ยว ป้ารมย์ (แม่จัน)</h3></div>
+      <div class="badges"><span class="badge sea">ร้านเล็กในตำนาน</span></div>
+      <p class="review">ร้านน้ำเงี้ยวเล็กๆ ในอำเภอแม่จัน จ.เชียงราย รสชาติแบบดั้งเดิม เหมาะกับคนที่ชอบร้านท้องถิ่นเงียบๆ ไม่พลุกพล่าน</p>
+      <div class="meta"><span>📍 อ.แม่จัน จ.เชียงราย</span></div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B8%A7%20%E0%B8%9B%E0%B9%89%E0%B8%B2%E0%B8%A3%E0%B8%A1%E0%B8%A2%E0%B9%8C%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B8%B1%E0%B8%99%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2" target="_blank" rel="noopener">📍 ดูแผนที่</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B5%E0%B9%89%E0%B8%A7%20%E0%B8%9B%E0%B9%89%E0%B8%B2%E0%B8%A3%E0%B8%A1%E0%B8%A2%E0%B9%8C%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B8%B1%E0%B8%99%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2" target="_blank" rel="noopener">🧭 นำทาง</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><h3>น้ำเงี้ยว ป้าสุข (แม่สาย)</h3></div>
+      <div class="badges"><span class="badge sea">ร้านเล็กในตำนาน</span></div>
+      <p class="review">ร้านน้ำเงี้ยวเล็กๆ ในอำเภอแม่สาย จ.เชียงราย ติดชายแดน รสชาติเข้มข้นแบบต้นตำรับ</p>
+      <div class="meta"><span>📍 อ.แม่สาย จ.เชียงราย</span></div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B5%E0%B9%89%E0%B8%A7%20%E0%B8%9B%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B8%E0%B8%82%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2" target="_blank" rel="noopener">📍 ดูแผนที่</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B5%E0%B9%89%E0%B8%A7%20%E0%B8%9B%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B8%E0%B8%82%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2" target="_blank" rel="noopener">🧭 นำทาง</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="sign">🌊 แวะกินเผื่อมีโอกาสนะ</div>
+    <div>อัปเดตล่าสุด กรกฎาคม 2026 · เวลาเปิด-ปิดอาจเปลี่ยนแปลง แนะนำโทรเช็คก่อนไปนะ</div>
+  </footer>
+
+</div>
+</body>
+</html>
