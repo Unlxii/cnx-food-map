@@ -1,418 +1,2721 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>คู่มือร้านอร่อยเชียงใหม่ 🌊</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --sea-deep:#1c6fa8;
-    --sea:#3fa9dc;
-    --sea-light:#8fd3f4;
-    --sky:#eef8fc;
-    --sky-2:#f7fbfd;
-    --sand:#fffaf1;
-    --white:#ffffff;
-    --text:#1f3b4d;
-    --muted:#5f7d8f;
-    --line:#dcedf4;
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    font-family:'Prompt','Mitr',-apple-system,BlinkMacSystemFont,sans-serif;
-    background:linear-gradient(180deg,var(--sky) 0%,var(--sky-2) 400px,#ffffff 100%);
-    color:var(--text);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:640px;margin:0 auto;padding:0 20px 60px;}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#1c6fa8" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌊</text></svg>"
+    />
+    <title>คู่มือฉบับน้องเตนท์ ร้านอร่อยเชียงใหม่ให้พี่เนียร์ 🫶🏻 🌊</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --sea-deep: #1c6fa8;
+        --sea: #3fa9dc;
+        --sea-light: #8fd3f4;
+        --sky: #eef8fc;
+        --sky-2: #f7fbfd;
+        --sand: #fffaf1;
+        --white: #ffffff;
+        --text: #1f3b4d;
+        --muted: #4f6d82;
+        --line: #dcedf4;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--sea-deep);
+        outline-offset: 2px;
+        border-radius: 8px;
+      }
+      body {
+        font-family:
+          "Prompt",
+          "Mitr",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: linear-gradient(
+          180deg,
+          var(--sky) 0%,
+          var(--sky-2) 400px,
+          #fffdf8 100%
+        );
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 0 20px 60px;
+        position: relative;
+        z-index: 2;
+      }
 
-  /* ---------- HERO ---------- */
-  .hero{
-    text-align:center;
-    padding:56px 20px 28px;
-    position:relative;
-    overflow:hidden;
-  }
-  .hero .tag{
-    display:inline-block;
-    background:var(--white);
-    color:var(--sea-deep);
-    font-size:13px;
-    padding:6px 14px;
-    border-radius:999px;
-    box-shadow:0 2px 10px rgba(63,169,220,0.15);
-    margin-bottom:16px;
-    letter-spacing:.3px;
-  }
-  .hero h1{
-    font-family:'Mitr',sans-serif;
-    font-weight:500;
-    font-size:30px;
-    margin:0 0 10px;
-    color:var(--sea-deep);
-  }
-  .hero p{
-    color:var(--muted);
-    font-size:15px;
-    max-width:420px;
-    margin:0 auto;
-  }
-  .wave{
-    display:block;
-    width:100%;
-    height:60px;
-    margin-top:28px;
-  }
+      /* ---------- HERO ---------- */
+      .hero {
+        text-align: center;
+        padding: 56px 20px 28px;
+        position: relative;
+        overflow: hidden;
+        width: 100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        min-height: 100vh;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+      /* soft underwater light rays, drifting behind the text */
+      .light-rays {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
+        mix-blend-mode: screen;
+      }
+      .ray {
+        position: absolute;
+        top: -15%;
+        height: 145%;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.4) 0%,
+          rgba(255, 255, 255, 0) 72%
+        );
+        animation: ray-shimmer 13s ease-in-out infinite;
+      }
+      .ray-1 {
+        left: 8%;
+        width: 90px;
+        transform: rotate(11deg);
+        animation-delay: -1s;
+      }
+      .ray-2 {
+        left: 30%;
+        width: 60px;
+        transform: rotate(-8deg);
+        opacity: 0.7;
+        animation-delay: -3.5s;
+      }
+      .ray-3 {
+        left: 58%;
+        width: 110px;
+        transform: rotate(9deg);
+        animation-delay: -5s;
+      }
+      .ray-4 {
+        left: 82%;
+        width: 65px;
+        transform: rotate(-12deg);
+        opacity: 0.6;
+        animation-delay: -2s;
+      }
+      @keyframes ray-shimmer {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 0.65;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .ray {
+          animation: none;
+          opacity: 0.4;
+        }
+      }
+      .hero .tag {
+        display: inline-block;
+        background: var(--white);
+        color: var(--sea-deep);
+        font-size: 13px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        box-shadow: 0 2px 10px rgba(63, 169, 220, 0.15);
+        margin-bottom: 16px;
+        letter-spacing: 0.3px;
+        position: relative;
+        z-index: 2;
+      }
+      .hero h1 {
+        font-family: "Mitr", sans-serif;
+        font-weight: 500;
+        font-size: 30px;
+        margin: 0 0 10px;
+        color: var(--sea-deep);
+        position: relative;
+        z-index: 2;
+      }
+      .hero p {
+        color: var(--muted);
+        font-size: 15px;
+        max-width: 420px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+      .wave-wrap {
+        position: relative;
+        width: 100%;
+        height: 60px;
+        margin-top: 28px;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .wave {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 60px;
+      }
+      .wave-back {
+        animation: wave-scroll 24s linear infinite;
+      }
+      .wave-front {
+        animation: wave-scroll 16s linear infinite reverse;
+      }
+      @keyframes wave-scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .wave-back,
+        .wave-front {
+          animation: none;
+        }
+      }
 
-  /* ---------- NAV PILLS ---------- */
-  .nav{
-    display:flex;
-    gap:8px;
-    overflow-x:auto;
-    padding:4px 4px 24px;
-    scrollbar-width:none;
-  }
-  .nav::-webkit-scrollbar{display:none;}
-  .nav a{
-    flex:0 0 auto;
-    background:var(--white);
-    border:1px solid var(--line);
-    color:var(--sea-deep);
-    text-decoration:none;
-    font-size:13.5px;
-    padding:9px 15px;
-    border-radius:999px;
-    white-space:nowrap;
-  }
+      /* ---------- SEA CRITTERS (full-page background) ---------- */
+      .sea-bg {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        z-index: 0;
+        pointer-events: none;
+      }
+      /* the tiniest ambient tint as you scroll down — a hint of depth, not a wash */
+      .depth-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background: linear-gradient(
+          180deg,
+          rgba(28, 111, 168, 0.05) 0%,
+          rgba(15, 66, 105, 0.4) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.6s ease;
+      }
+      /* small, soft-focus island silhouettes tucked in the corners — a distant
+         background layer (per real parallax-illustration practice: keep the
+         far layer blurred/muted and out of the way of the actual content) */
+      .island {
+        position: absolute;
+        height: auto;
+        filter: blur(1px);
+      }
+      .island-left {
+        bottom: 6%;
+        left: -30px;
+        width: 180px;
+        opacity: 0.55;
+      }
+      .island-right {
+        bottom: 11%;
+        right: -20px;
+        width: 125px;
+        opacity: 0.45;
+        transform: scaleX(-1);
+      }
+      /* little depth-gauge badge, top corner — nods to real dive-computer HUDs */
+      .depth-gauge {
+        position: fixed;
+        top: 14px;
+        right: 14px;
+        z-index: 4;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(4px);
+        color: var(--sea-deep);
+        font-size: 12px;
+        font-weight: 500;
+        padding: 6px 12px;
+        border-radius: 999px;
+        box-shadow: 0 2px 10px rgba(28, 111, 168, 0.15);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+      .depth-gauge.visible {
+        opacity: 1;
+      }
+      .critter {
+        position: absolute;
+      }
+      .critter svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .critter.whale {
+        color: var(--sea-deep);
+      }
+      .critter.fish {
+        color: var(--sea);
+      }
+      .critter.shell {
+        color: #d9a26c;
+      }
+      .critter.seahorse {
+        color: #e8a15f;
+        animation: seahorse-bob 8.5s ease-in-out infinite;
+      }
+      .bubble {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(63, 169, 220, 0.35);
+        animation-name: bubble-float;
+        animation-timing-function: ease-in;
+        animation-iteration-count: infinite;
+      }
+      @keyframes whale-swim {
+        0% {
+          left: -20%;
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          left: 112%;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fish-swim-lr {
+        0% {
+          left: -12%;
+          transform: translateY(0) rotate(0deg);
+        }
+        25% {
+          transform: translateY(-10px) rotate(-3deg);
+        }
+        50% {
+          left: 50%;
+          transform: translateY(4px) rotate(2deg);
+        }
+        75% {
+          transform: translateY(-8px) rotate(-2deg);
+        }
+        100% {
+          left: 110%;
+          transform: translateY(0) rotate(0deg);
+        }
+      }
+      @keyframes fish-swim-rl {
+        0% {
+          right: -12%;
+          transform: scaleX(-1) translateY(0) rotate(0deg);
+        }
+        25% {
+          transform: scaleX(-1) translateY(8px) rotate(3deg);
+        }
+        50% {
+          right: 50%;
+          transform: scaleX(-1) translateY(-6px) rotate(-2deg);
+        }
+        75% {
+          transform: scaleX(-1) translateY(8px) rotate(2deg);
+        }
+        100% {
+          right: 110%;
+          transform: scaleX(-1) translateY(0) rotate(0deg);
+        }
+      }
+      @keyframes seahorse-bob {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-4deg);
+        }
+        50% {
+          transform: translateY(-14px) rotate(4deg);
+        }
+      }
+      @keyframes shell-sway {
+        0%,
+        100% {
+          transform: rotate(var(--rot, 0deg));
+        }
+        50% {
+          transform: rotate(calc(var(--rot, 0deg) + 5deg));
+        }
+      }
+      @keyframes bubble-float {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 0;
+        }
+        12% {
+          opacity: 0.7;
+        }
+        80% {
+          opacity: 0.35;
+        }
+        100% {
+          transform: translateY(-70vh) scale(1.3);
+          opacity: 0;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .sea-bg {
+          display: none;
+        }
+      }
 
-  /* ---------- SECTION ---------- */
-  .section{margin-top:38px;}
-  .section-head{
-    display:flex;
-    align-items:baseline;
-    gap:8px;
-    margin-bottom:14px;
-    scroll-margin-top:16px;
-  }
-  .section-head h2{
-    font-family:'Mitr',sans-serif;
-    font-weight:500;
-    font-size:19px;
-    margin:0;
-    color:var(--sea-deep);
-  }
-  .section-head span.count{
-    color:var(--muted);
-    font-size:13px;
-  }
-  .section-note{
-    color:var(--muted);
-    font-size:13.5px;
-    margin:-6px 0 16px;
-  }
+      /* ---------- SEABED SCENE (near the footer) ---------- */
+      .seabed {
+        position: relative;
+        margin-top: 46px;
+        padding: 34px 10px 8px;
+        text-align: center;
+      }
+      .seabed-note {
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 18px;
+      }
+      .seabed-scene {
+        position: relative;
+        height: 130px;
+        overflow: visible;
+        border-radius: 50% 50% 0 0 / 22px 22px 0 0;
+        background: linear-gradient(
+          180deg,
+          rgba(242, 223, 184, 0) 0%,
+          rgba(242, 223, 184, 0.85) 45%,
+          rgba(228, 199, 143, 0.95) 100%
+        );
+      }
+      .seabed-item {
+        position: absolute;
+        bottom: 0;
+      }
+      .seabed-item svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .sb-rock {
+        color: #9fb3bd;
+      }
+      .sb-coral {
+        color: #ff9e8a;
+      }
+      .sb-coral.alt {
+        color: #ffc46b;
+      }
+      .sb-seaweed {
+        color: #3f9d6e;
+        transform-origin: bottom center;
+        animation: seaweed-sway 7s ease-in-out infinite;
+      }
+      .sb-starfish {
+        color: #ff9843;
+        animation: starfish-pulse 6s ease-in-out infinite;
+      }
+      .sb-crab {
+        color: #d9663b;
+        animation: crab-wiggle 5s ease-in-out infinite;
+      }
+      @keyframes seaweed-sway {
+        0%,
+        100% {
+          transform: rotate(-5deg);
+        }
+        50% {
+          transform: rotate(5deg);
+        }
+      }
+      @keyframes starfish-pulse {
+        0%,
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
+        50% {
+          transform: scale(1.04) rotate(3deg);
+        }
+      }
+      @keyframes crab-wiggle {
+        0%,
+        100% {
+          transform: translateX(0) rotate(0deg);
+        }
+        25% {
+          transform: translateX(-1px) rotate(-2deg);
+        }
+        75% {
+          transform: translateX(1px) rotate(2deg);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .sb-seaweed,
+        .sb-starfish,
+        .sb-crab {
+          animation: none;
+        }
+      }
 
-  /* ---------- CARD ---------- */
-  .card{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:18px 20px;
-    margin-bottom:14px;
-    box-shadow:0 3px 14px rgba(28,111,168,0.06);
-  }
-  .card-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:10px;
-    margin-bottom:8px;
-  }
-  .card-top h3{
-    font-size:16.5px;
-    margin:0;
-    font-weight:600;
-  }
-  .badges{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 10px;}
-  .badge{
-    font-size:11.5px;
-    background:var(--sky);
-    color:var(--sea-deep);
-    padding:3px 9px;
-    border-radius:999px;
-    border:1px solid var(--line);
-  }
-  .badge.spicy{background:#fff1ec;color:#c0522f;border-color:#ffe1d3;}
-  .badge.sea{background:#eaf7ff;color:var(--sea-deep);border-color:#d3edf9;}
-  .review{
-    font-size:14px;
-    color:#3c5769;
-    margin:0 0 12px;
-  }
-  .meta{
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-    font-size:13px;
-    color:var(--muted);
-    margin-bottom:14px;
-  }
-  .actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-  }
-  .btn{
-    text-decoration:none;
-    font-size:13px;
-    padding:9px 14px;
-    border-radius:12px;
-    font-weight:500;
-    display:inline-flex;
-    align-items:center;
-    gap:5px;
-  }
-  .btn-primary{background:var(--sea);color:#fff;}
-  .btn-outline{background:#fff;color:var(--sea-deep);border:1px solid var(--sea-light);}
-  .btn-text{color:var(--muted);border:1px solid var(--line);background:var(--sky);}
+      /* ---------- NAV PILLS ---------- */
+      .nav {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 4px 4px 24px;
+        scrollbar-width: none;
+      }
+      .nav::-webkit-scrollbar {
+        display: none;
+      }
+      .nav a {
+        flex: 0 0 auto;
+        background: var(--white);
+        border: 1px solid var(--line);
+        color: var(--sea-deep);
+        text-decoration: none;
+        font-size: 13.5px;
+        padding: 9px 15px;
+        border-radius: 999px;
+        white-space: nowrap;
+        transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+      .nav a.active {
+        background: var(--sea);
+        border-color: var(--sea);
+        color: #fff;
+      }
+      @media (hover: hover) and (pointer: fine) {
+        .nav a:hover {
+          background: var(--sky);
+          border-color: var(--sea-light);
+        }
+      }
 
-  /* ---------- FEATURED ---------- */
-  .featured{
-    background:linear-gradient(160deg,var(--sea-deep),var(--sea) 70%);
-    color:#fff;
-    border-radius:20px;
-    padding:24px 22px;
-    margin-bottom:14px;
-    position:relative;
-    overflow:hidden;
-  }
-  .featured .badge{background:rgba(255,255,255,0.18);color:#fff;border-color:rgba(255,255,255,0.25);}
-  .featured h3{font-size:18px;margin:0 0 6px;}
-  .featured .review{color:rgba(255,255,255,0.92);}
-  .featured .meta{color:rgba(255,255,255,0.85);}
-  .featured .btn-outline{background:rgba(255,255,255,0.12);color:#fff;border-color:rgba(255,255,255,0.5);}
-  .featured .btn-text{background:rgba(255,255,255,0.12);color:#fff;border-color:rgba(255,255,255,0.3);}
-  .featured .btn-primary{background:#fff;color:var(--sea-deep);}
+      /* ---------- SECTION ---------- */
+      .section {
+        margin-top: 52px;
+      }
+      .section-head {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-bottom: 14px;
+        scroll-margin-top: 16px;
+      }
+      .section-head h2 {
+        font-family: "Mitr", sans-serif;
+        font-weight: 500;
+        font-size: 19px;
+        margin: 0;
+        color: var(--sea-deep);
+      }
+      .section-head span.count {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .section-note {
+        color: var(--muted);
+        font-size: 13.5px;
+        margin: -6px 0 16px;
+      }
 
-  /* ---------- FOOTER ---------- */
-  footer{
-    text-align:center;
-    margin-top:52px;
-    padding-top:24px;
-    border-top:1px solid var(--line);
-    color:var(--muted);
-    font-size:13px;
-  }
-  footer .sign{
-    font-family:'Mitr',sans-serif;
-    color:var(--sea-deep);
-    font-size:15px;
-    margin-bottom:6px;
-  }
-</style>
-</head>
-<body>
-<div class="wrap">
+      /* ---------- CARD ---------- */
+      .card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px 20px;
+        margin-bottom: 18px;
+        box-shadow: 0 3px 14px rgba(28, 111, 168, 0.06);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+      @media (hover: hover) and (pointer: fine) {
+        .card:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 26px rgba(28, 111, 168, 0.12);
+          border-color: var(--sea-light);
+        }
+      }
+      .card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+      .card-top h3 {
+        font-size: 16.5px;
+        margin: 0;
+        font-weight: 600;
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 2px 0 10px;
+      }
+      .badge {
+        font-size: 11.5px;
+        background: var(--sky);
+        color: var(--sea-deep);
+        padding: 3px 9px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+      }
+      .badge.spicy {
+        background: #fff1ec;
+        color: #c0522f;
+        border-color: #ffe1d3;
+      }
+      .badge.sea {
+        background: #eaf7ff;
+        color: var(--sea-deep);
+        border-color: #d3edf9;
+      }
+      .review {
+        font-size: 14px;
+        color: #3c5769;
+        margin: 0 0 12px;
+      }
+      .meta {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 14px;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .btn {
+        text-decoration: none;
+        font-size: 13px;
+        padding: 9px 14px;
+        border-radius: 12px;
+        font-weight: 500;
+        transition:
+          filter 0.2s ease,
+          transform 0.15s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .btn-primary {
+        background: var(--sea);
+        color: #fff;
+      }
+      .btn-outline {
+        background: #fff;
+        color: var(--sea-deep);
+        border: 1px solid var(--sea-light);
+      }
+      .btn-text {
+        color: var(--muted);
+        border: 1px solid var(--line);
+        background: var(--sky);
+      }
 
-  <div class="hero">
-    <span class="tag">🌊 Chiang Mai Food Guide</span>
-    <h1>คู่มือร้านอร่อยเชียงใหม่</h1>
-    <p>รวมร้านที่คัดมาให้แล้ว เผื่อวันไหนอยากแวะกิน ไม่ต้องเสิร์ชเอง — กดดูแผนที่ กดนำทางได้เลย</p>
-    <svg class="wave" viewBox="0 0 600 60" preserveAspectRatio="none">
-      <path d="M0,30 C100,60 200,0 300,30 C400,60 500,0 600,30 L600,60 L0,60 Z" fill="#3fa9dc" opacity="0.25"/>
-      <path d="M0,40 C100,15 200,55 300,35 C400,15 500,55 600,35 L600,60 L0,60 Z" fill="#3fa9dc" opacity="0.4"/>
-    </svg>
-  </div>
+      .tip {
+        margin: 0 0 14px;
+        padding: 10px 12px;
+        background: var(--sand);
+        border-left: 3px solid var(--sea);
+        border-radius: 0 10px 10px 0;
+        font-size: 13px;
+        color: #6b5636;
+        font-style: italic;
+      }
 
-  <div class="nav">
-    <a href="#sea">🌊 ฟีลทะเล</a>
-    <a href="#mala">🌶️ หมาล่า</a>
-    <a href="#curry">🍛 แกงกะหรี่</a>
-    <a href="#chicken">🍗 ไก่ทอด</a>
-    <a href="#khaosoi">🍜 ข้าวซอย</a>
-    <a href="#faraway">🚗 ทริปไกลหน่อย</a>
-  </div>
+      /* ---------- FEATURED ---------- */
+      .featured {
+        background: linear-gradient(160deg, var(--sea-deep), var(--sea) 70%);
+        color: #fff;
+        border-radius: 20px;
+        padding: 24px 22px;
+        margin-bottom: 14px;
+        position: relative;
+        overflow: hidden;
+      }
+      .featured .badge {
+        background: rgba(255, 255, 255, 0.18);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+      .featured h3 {
+        font-size: 18px;
+        margin: 0 0 6px;
+      }
+      .featured .review {
+        color: rgba(255, 255, 255, 0.92);
+      }
+      .featured .meta {
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .featured .btn-outline {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      .featured .btn-text {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+      .featured .btn-primary {
+        background: #fff;
+        color: var(--sea-deep);
+      }
 
-  <!-- ===== SEA VIBE ===== -->
-  <div class="section" id="sea">
-    <div class="section-head"><h2>🌊 ฟีลทะเล (แบบเชียงใหม่)</h2></div>
-    <p class="section-note">เชียงใหม่ไม่มีทะเลจริงๆ แต่มีที่นี่ที่คนเรียกกันว่า "ทะเลเชียงใหม่"</p>
+      /* ---------- FOOTER ---------- */
+      footer {
+        text-align: center;
+        margin-top: 52px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 13px;
+      }
+      footer .sign {
+        font-family: "Mitr", sans-serif;
+        color: var(--sea-deep);
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+      footer .ig-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 14px;
+        padding: 9px 16px;
+        border-radius: 999px;
+        background: var(--white);
+        border: 1px solid var(--line);
+        color: var(--sea-deep);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+      }
 
-    <div class="featured">
-      <div class="badges"><span class="badge">หาดทรายจำลอง</span><span class="badge">เล่นน้ำได้</span></div>
-      <h3>ห้วยตึงเฒ่า</h3>
-      <p class="review">อ่างเก็บน้ำกลางหุบเขา มีหาดทรายริมน้ำให้เดินเล่น นั่งชิล เช่าห่วงยาง เรือพาย มีร้านอาหารรอบๆ บรรยากาศโปร่งลมเย็น เหมาะกับคนที่คิดถึงทะเลแต่ไม่อยากขับรถไกล</p>
-      <div class="meta">
-        <span>🕒 เปิดทุกวัน 06:30–18:00 น.</span>
-        <span>💵 ค่าเข้าคนไทย 20 บาท</span>
-        <span>📍 ต.ดอนแก้ว อ.แม่ริม จ.เชียงใหม่</span>
-      </div>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%AB%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%95%E0%B8%B6%E0%B8%87%E0%B9%80%E0%B8%92%E0%B9%88%E0%B8%B2%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B4%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">📍 ดูแผนที่</a>
-        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%AB%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%95%E0%B8%B6%E0%B8%87%E0%B9%80%E0%B8%92%E0%B9%88%E0%B8%B2%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B4%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">🧭 นำทาง</a>
-        <a class="btn btn-text" href="https://thailandtourismdirectory.go.th/attraction/292" target="_blank" rel="noopener">ℹ️ ข้อมูลเพิ่มเติม</a>
-      </div>
+      /* ---------- RANDOM PICKER ---------- */
+      .random-wrap {
+        text-align: center;
+        margin: 4px 0 10px;
+      }
+      .random-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--white);
+        border: 1px dashed var(--sea-light);
+        color: var(--sea-deep);
+        font-family: inherit;
+        font-size: 13.5px;
+        font-weight: 500;
+        padding: 11px 18px;
+        border-radius: 999px;
+        cursor: pointer;
+        box-shadow: 0 3px 14px rgba(28, 111, 168, 0.08);
+      }
+      .random-btn:active {
+        transform: scale(0.98);
+      }
+      @keyframes pop-highlight {
+        0%,
+        100% {
+          box-shadow: 0 3px 14px rgba(28, 111, 168, 0.06);
+        }
+        25% {
+          box-shadow: 0 0 0 6px rgba(63, 169, 220, 0.35);
+        }
+        50% {
+          box-shadow: 0 0 0 3px rgba(63, 169, 220, 0.25);
+        }
+      }
+      .card.picked {
+        animation: pop-highlight 2.6s ease;
+      }
+
+      /* ---------- STICKY CONTACT BAR ---------- */
+      .contact-bar {
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        margin-top: 40px;
+        padding: 12px 16px;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(6px);
+        border-top: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+      .contact-bar span {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .contact-bar a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--sea);
+        color: #fff;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 8px 14px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+
+      /* ---------- TIME OF DAY HERO ---------- */
+      .hero {
+        transition: background 2.5s ease;
+      }
+      .hero.time-morning {
+        background: linear-gradient(
+          180deg,
+          #ffd9a0 0%,
+          #ffe8d6 45%,
+          var(--sky-2) 100%
+        );
+      }
+      .hero.time-night {
+        background: linear-gradient(
+          180deg,
+          #0b2545 0%,
+          #1c3d5a 55%,
+          var(--sky-2) 100%
+        );
+      }
+      .hero.time-night .tag {
+        background: rgba(255, 255, 255, 0.92);
+      }
+      .hero.time-night h1 {
+        color: #eaf6ff;
+      }
+      .hero.time-night p {
+        color: #b9d4e8;
+      }
+      .hero.time-morning h1 {
+        color: #a85a2a;
+      }
+      .hero.time-morning p {
+        color: #8a6a4a;
+      }
+      .hero.time-night .wave path {
+        fill: #8fd3f4;
+      }
+      .hero.time-morning .wave path {
+        fill: #ffb27a;
+      }
+
+      /* ---------- RESPONSIVE ---------- */
+      @media (min-width: 640px) {
+        .wrap {
+          max-width: 720px;
+        }
+        .hero h1 {
+          font-size: 34px;
+        }
+        .btn:hover {
+          filter: brightness(1.05);
+          transform: translateY(-1px);
+        }
+        .btn:active {
+          transform: translateY(0);
+        }
+        .random-btn:hover {
+          background: var(--sky);
+        }
+      }
+      @media (min-width: 1024px) {
+        .wrap {
+          max-width: 820px;
+          padding: 0 24px 60px;
+        }
+        .hero {
+          padding: 88px 20px 44px;
+        }
+        .hero h1 {
+          font-size: 38px;
+        }
+        .hero p {
+          font-size: 16px;
+        }
+        .card {
+          padding: 22px 26px;
+        }
+        .card-top h3 {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sea-bg" id="seaBg" aria-hidden="true">
+      <svg class="island island-left" viewBox="0 0 220 110" fill="none">
+        <path
+          d="M0 108 C10 82 30 62 55 58 C72 55 82 40 105 42 C124 44 128 58 148 60 C176 63 198 78 220 108 Z"
+          fill="#e3c383"
+        />
+        <path
+          d="M0 108 C10 82 30 62 55 58 C60 57 64 55 68 52 L68 92 C48 94 26 98 8 106 Z"
+          fill="#c9a55f"
+          opacity="0.55"
+        />
+        <path
+          d="M70 60 C68 46 72 32 78 20"
+          stroke="#8a6a4a"
+          stroke-width="3.5"
+          fill="none"
+          stroke-linecap="round"
+        />
+        <path
+          d="M78 20 C70 15 62 17 56 13 M78 20 C82 12 92 9 98 13 M78 20 C75 9 77 2 71 -3 M78 20 C84 9 90 4 96 1"
+          stroke="#4f8f56"
+          stroke-width="2.6"
+          fill="none"
+          stroke-linecap="round"
+        />
+        <path
+          d="M112 56 C110 44 114 34 119 24"
+          stroke="#8a6a4a"
+          stroke-width="3"
+          fill="none"
+          stroke-linecap="round"
+        />
+        <path
+          d="M119 24 C112 19 105 21 100 17 M119 24 C123 17 131 15 136 18"
+          stroke="#4f8f56"
+          stroke-width="2.2"
+          fill="none"
+          stroke-linecap="round"
+        />
+      </svg>
+      <svg class="island island-right" viewBox="0 0 220 110" fill="none">
+        <path
+          d="M0 108 C10 84 28 66 50 62 C64 60 72 46 92 48 C108 50 112 62 130 64 C154 67 174 80 200 108 Z"
+          fill="#eccb8f"
+        />
+        <path
+          d="M0 108 C10 84 28 66 50 62 C54 61 58 59 62 56 L62 90 C44 92 24 96 6 105 Z"
+          fill="#d1ad6a"
+          opacity="0.5"
+        />
+        <path
+          d="M64 64 C62 52 66 40 71 30"
+          stroke="#8a6a4a"
+          stroke-width="3"
+          fill="none"
+          stroke-linecap="round"
+        />
+        <path
+          d="M71 30 C64 25 57 27 52 23 M71 30 C75 23 83 21 88 24"
+          stroke="#5a9a5f"
+          stroke-width="2.3"
+          fill="none"
+          stroke-linecap="round"
+        />
+      </svg>
     </div>
-  </div>
-
-  <!-- ===== MALA ===== -->
-  <div class="section" id="mala">
-    <div class="section-head"><h2>🌶️ หมาล่า</h2></div>
-
-    <div class="card">
-      <div class="card-top"><h3>หม่าล่า 4 แยก (สาขาศรีปิงเมือง)</h3></div>
-      <div class="badges"><span class="badge spicy">ต้นตำรับ</span><span class="badge">ปรุงสุกทุกจาน</span></div>
-      <p class="review">ร้านหมาล่าต้นตำรับที่คนเชียงใหม่พูดถึงกันมากที่สุด เลือกวัตถุดิบเองได้ตามใจ มีให้เลือกทั้งแบบต้มและย่าง บรรยากาศร้านกว้าง นั่งสบาย เหมาะกับมื้อเย็น</p>
-      <div class="meta">
-        <span>🕒 เปิดทุกวัน 17:30–00:00 น.</span>
-        <span>📍 ถ.ศรีปิงเมือง ต.หายยา อ.เมืองเชียงใหม่ (ตรงข้าม 7-11 ศรีปิงเมือง)</span>
+    <div class="depth-overlay" id="depthOverlay" aria-hidden="true"></div>
+    <div class="depth-gauge" id="depthGauge" aria-hidden="true">
+      <span>🌊</span><span id="depthGaugeText">ลึก 0 ม.</span>
+    </div>
+    <div class="wrap">
+      <div class="hero">
+        <div class="light-rays" aria-hidden="true">
+          <span class="ray ray-1"></span>
+          <span class="ray ray-2"></span>
+          <span class="ray ray-3"></span>
+          <span class="ray ray-4"></span>
+        </div>
+        <span class="tag">เก็บไว้เผื่อวันไหนพี่เนียร์อยากไปคับ</span>
+        <h1>ร้านNo.1 ในใจน้อง</h1>
+        <p>(เผื่อวันไหนว่างตรงกัน พี่เนียร์จะได้ลองกินอะไรอร่อยๆคับ 55)</p>
+        <div class="wave-wrap">
+          <svg
+            class="wave wave-back"
+            viewBox="0 0 1200 60"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,30 C100,60 200,0 300,30 C400,60 500,0 600,30 C700,60 800,0 900,30 C1000,60 1100,0 1200,30 L1200,60 L0,60 Z"
+              fill="#3fa9dc"
+              opacity="0.25"
+            />
+          </svg>
+          <svg
+            class="wave wave-front"
+            viewBox="0 0 1200 60"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,40 C100,15 200,55 300,35 C400,15 500,55 600,35 C700,15 800,55 900,35 C1000,15 1100,55 1200,35 L1200,60 L0,60 Z"
+              fill="#3fa9dc"
+              opacity="0.4"
+            />
+          </svg>
+        </div>
       </div>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%204%20%E0%B9%81%E0%B8%A2%E0%B8%81%20%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%9B%E0%B8%B4%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">📍 ดูแผนที่</a>
-        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%204%20%E0%B9%81%E0%B8%A2%E0%B8%81%20%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%9B%E0%B8%B4%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">🧭 นำทาง</a>
-        <a class="btn btn-text" href="https://www.wongnai.com/restaurants/mha-la-4-yeak" target="_blank" rel="noopener">ℹ️ รีวิวเพิ่มเติม</a>
+
+      <div class="nav">
+        <a href="#sea">ฟีลทะเลลล</a>
+        <a href="#mala">หมาล่า</a>
+        <a href="#curry">แกงกะหรี่</a>
+        <a href="#chicken">ไก่ทอด</a>
+        <a href="#burger">เบอร์เกอร์+บาร์บีคิว</a>
+        <a href="#khaosoi">ข้าวซอย</a>
+        <a href="#payap">ใกล้ ม.พายัพ</a>
+        <a href="#rampeng">แถวสุเทพ (ร่ำเปิง-โป่งน้อย)</a>
+        <a href="#trip">เที่ยวชิลๆ</a>
+        <a href="#fun">ลองทำ/พักใจ</a>
+        <a href="#train">แถวสถานีรถไฟ</a>
+        <a href="#dessert">ขนมหวาน</a>
       </div>
+
+      <div class="random-wrap">
+        <button type="button" class="random-btn" id="randomBtn">
+          🎲 ถ้าคิดไม่ออกกดสุ่มตรงนี้ก็ได้นะคับ 555
+        </button>
+      </div>
+
+      <!-- ===== SEA VIBE ===== -->
+      <div class="section" id="sea">
+        <div class="section-head"><h2>🌊 ฟีลทะเล (แบบเชียงใหม่)</h2></div>
+        <p class="section-note">
+          เชียงใหม่ไม่มีทะเลจริงจังเลย แต่ที่นี่พอแทนได้อยู่คับ
+          พี่อาจต้องลองไปดู
+        </p>
+
+        <div class="featured">
+          <div class="badges">
+            <span class="badge">หาดทรายจำลอง</span
+            ><span class="badge">เล่นน้ำได้</span>
+          </div>
+          <h3>ห้วยตึงเฒ่า</h3>
+          <p class="review">
+            มีหาดทรายเล็กๆ ริมน้ำ ลมเย็นๆ นั่งชิลได้ทั้งวันเลยย
+            เช่าห่วงยางเล่นน้ำได้ด้วย วันไหนคิดถึงทะเลแต่ไม่อยากขับรถไกล
+            มาที่นี่ก็พอไหวอยู่คับ
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 06:30–18:00 น.</span>
+            <span
+              >ค่าเข้าคนไทย 20 บาท (ค่ากินอยู่ที่ร้านรอบๆ ประมาณ 100–200฿/คน)
+              คับที่เคยลองมา</span
+            >
+            <span>ต.ดอนแก้ว อ.แม่ริม จ.เชียงใหม่</span>
+          </div>
+          <div class="tip">
+            ที่นี่คนเชียงใหม่เรียกว่าทะเลเชียงใหม่คับ
+            ถ้าพี่เนียร์อยากลองมานั่งชิลบ้างก็มาได้เลยย
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%AB%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%95%E0%B8%B6%E0%B8%87%E0%B9%80%E0%B8%92%E0%B9%88%E0%B8%B2%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B4%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%AB%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%95%E0%B8%B6%E0%B8%87%E0%B9%80%E0%B8%92%E0%B9%88%E0%B8%B2%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B4%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://thailandtourismdirectory.go.th/attraction/292"
+              target="_blank"
+              rel="noopener"
+              >ข้อมูลเพิ่มเติม</a
+            >
+          </div>
+        </div>
+
+        <div class="featured">
+          <div class="badges">
+            <span class="badge">ต้นไม้ยักษ์กลางน้ำ</span
+            ><span class="badge">พายเรือ/คายัคชม</span>
+          </div>
+          <h3>ล่องเรือชมต้นฉำฉายักษ์ เขื่อนแม่งัดสมบูรณ์ชล</h3>
+          <p class="review">
+            อันนี้พี่เนียร์เคยพูดถึงเลยคับ อ่างเก็บน้ำที่ต้องพายเรือเข้าไป
+            แล้วเจอต้นฉำฉายักษ์เก่าแก่โผล่พ้นน้ำขึ้นมา
+            เหลือจากหมู่บ้านเก่าที่จมอยู่ใต้อ่างเก็บน้ำ บรรยากาศเงียบสงบมาก
+            พายเรือเข้าไปชมใกล้ๆ ได้เลย
+          </p>
+          <div class="meta">
+            <span
+              >เปิดช่วงน้ำขึ้นประมาณ มิ.ย.–มี.ค. (ปิดช่วงหมอกควัน เม.ย.–พ.ค.)
+              แนะนำไปช่วงเช้าหรือเย็นแดดไม่แรง</span
+            >
+            <span
+              >ค่าเรือ+ไกด์ ลำละ 700฿ (นั่งได้ 3 คน รวมค่าเข้าอุทยานฯ แล้ว) ·
+              ค่าเข้าอุทยานฯ คนไทย 20฿</span
+            >
+            <span
+              >ท่าเรือฝั่งอุทยานแห่งชาติศรีลานนา (เขื่อนแม่งัดสมบูรณ์ชล) อ.พร้าว
+              จ.เชียงใหม่</span
+            >
+          </div>
+          <div class="tip">
+            ไกลจากตัวเมืองหน่อยคับ (แถว อ.พร้าว) เลยต้องเผื่อเวลาทั้งวันจริงๆ
+            แต่ถ้าวันไหนมีเวลาเต็มที่ อยากลองพาไปคับ
+            ต้องเช็กช่วงน้ำขึ้นก่อนไปด้วยนะ
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B9%80%E0%B8%82%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%87%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%A1%E0%B8%9A%E0%B8%B9%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%8A%E0%B8%A5%20%E0%B8%AD.%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%A7%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B9%80%E0%B8%82%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%87%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%A1%E0%B8%9A%E0%B8%B9%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%8A%E0%B8%A5%20%E0%B8%AD.%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%A7%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://travel.kapook.com/view289256.html"
+              target="_blank"
+              rel="noopener"
+              >ข้อมูลเพิ่มเติม</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== MALA ===== -->
+      <div class="section" id="mala">
+        <div class="section-head"><h2>🌶️ หมาล่า</h2></div>
+
+        <div class="card">
+          <div class="card-top"><h3>หม่าล่า 4 แยก (สาขาศรีปิงเมือง)</h3></div>
+          <div class="badges">
+            <span class="badge spicy">ต้นตำรับ</span
+            ><span class="badge">ปรุงสุกทุกจาน</span>
+          </div>
+          <p class="review">
+            ร้านนี้คนเชียงใหม่พูดถึงกันเยอะมากกกก เลือกของเองได้ตามใจเลยคับ
+            จะต้มจะย่างก็มีให้ นั่งสบาย เหมาะกับมื้อเย็นแบบไม่รีบกลับคับผม
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 17:30–00:00 น.</span>
+            <span>ประมาณ 100–250฿/คน (ไม้ละ 10฿) · ผมเอามาจาก Wongnai</span>
+            <span
+              >ถ.ศรีปิงเมือง ต.หายยา อ.เมืองเชียงใหม่ (ตรงข้าม 7-11
+              ศรีปิงเมือง)</span
+            >
+          </div>
+          <div class="tip">
+            ร้านนี้เผ็ดเลือกเองได้ น่าจะถูกจริตพี่เนียร์อยู่คับ 555
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%204%20%E0%B9%81%E0%B8%A2%E0%B8%81%20%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%9B%E0%B8%B4%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%204%20%E0%B9%81%E0%B8%A2%E0%B8%81%20%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%9B%E0%B8%B4%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.wongnai.com/restaurants/mha-la-4-yeak"
+              target="_blank"
+              rel="noopener"
+              >รีวิวเพิ่มเติม</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>ควันจุ๊งจุ๊ง หมาล่า (สาขารวมโชค)</h3></div>
+          <div class="badges">
+            <span class="badge spicy">เผ็ดถึงใจ</span
+            ><span class="badge">เมนูซี่โครงหมูเด็ด</span>
+          </div>
+          <p class="review">
+            ถ้าพี่ชอบซี่โครงหมูกับมันฝรั่งเสียบไม้ ร้านนี้ทำได้ดีเลยคับ
+            หอมเครื่องเทศ กินแล้วติดใจง่าย บรรยากาศชิลๆ เป็นกันเองม้ากก
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 18:00–00:00 น.</span>
+            <span>ประมาณ 100–250฿/คน (ไม้ละ 5–10฿) · อ้างอิง Wongnai</span>
+            <span>ต.ฟ้าฮ่าม อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="tip">
+            ร้านนี้พี่ยังไม่เคยไปเองเลยคับ เผื่อวันไหนอยากลองก็บอกได้
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%84%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%88%E0%B8%B8%E0%B9%8A%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%8A%E0%B8%87%20%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%20%E0%B8%9F%E0%B9%89%E0%B8%B2%E0%B8%AE%E0%B9%88%E0%B8%B2%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%84%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%88%E0%B8%B8%E0%B9%8A%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%8A%E0%B8%87%20%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%20%E0%B8%9F%E0%B9%89%E0%B8%B2%E0%B8%AE%E0%B9%88%E0%B8%B2%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.wongnai.com/reviews/c19862ae89714d63aab3dcf308de7f6e"
+              target="_blank"
+              rel="noopener"
+              >ดูใน Wongnai</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <h3>หลงฮัว Longhua หม่าล่าทั่ง (สุเทพ)</h3>
+          </div>
+          <div class="badges">
+            <span class="badge spicy">ตักเองชั่งกิโล</span
+            ><span class="badge">สไตล์มาล่าทั่ง</span>
+          </div>
+          <p class="review">
+            แบบตักวัตถุดิบเองใส่ชามแล้วเอาไปต้มในซุปหม่าล่า จ่ายตามน้ำหนักคับ
+            เลือกความเผ็ดเองได้ ถ้าพี่เนียร์อยากลองหม่าล่าอีกสไตล์ก็ร้านนี้เลย
+          </p>
+          <div class="meta">
+            <span>ประมาณ 11:00–21:00 น. (สุกี้เริ่มเสิร์ฟ 11 โมง)</span>
+            <span>ประมาณ 101–250฿/คน (จ่ายตามน้ำหนัก) · อ้างอิง Wongnai</span>
+            <span>ถ.สุเทพ (หลังมช.) อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Longhua%20%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%E0%B8%97%E0%B8%B1%E0%B9%88%E0%B8%87%20%E0%B8%AA%E0%B8%B8%E0%B9%80%E0%B8%97%E0%B8%9E%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=Longhua%20%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%E0%B8%97%E0%B8%B1%E0%B9%88%E0%B8%87%20%E0%B8%AA%E0%B8%B8%E0%B9%80%E0%B8%97%E0%B8%9E%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CURRY ===== -->
+      <div class="section" id="curry">
+        <div class="section-head"><h2>🍛 แกงกะหรี่</h2></div>
+        <p class="section-note">เผื่อวันไหนไม่อยากทำกินเองคับ 55</p>
+
+        <div class="card">
+          <div class="card-top"><h3>Santoku Japanese Hot Kitchen</h3></div>
+          <div class="badges">
+            <span class="badge">แกงกะหรี่ญี่ปุ่น</span
+            ><span class="badge">ปรุงสุก</span>
+          </div>
+          <p class="review">
+            แกงกะหรี่ร้านนี้เข้มข้นมาก เสิร์ฟร้อนๆ กินคู่ข้าวเข้ากันสุด
+            ร้านเล็กๆ อบอุ่นดี เหมาะกับมื้อเย็นแบบไม่ต้องรีบ
+          </p>
+          <div class="meta">
+            <span>17:00–21:00 น. (หยุดวันจันทร์)</span>
+            <span>ประมาณ 101–250฿/คน</span>
+            <span>อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="tip">เผื่อวันไหนอยากกินอะไรอุ่นๆ สบายท้องคับผม</div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Santoku%20Japanese%20Hot%20Kitchen%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=Santoku%20Japanese%20Hot%20Kitchen%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.wongnai.com/restaurants/261431ZT-santoku-japanese-hot-kitchen-%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูใน Wongnai</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Crazy Curry คลั่งแกงกะหรี่ญี่ปุ่น</h3></div>
+          <div class="badges">
+            <span class="badge">เมนูแกงกะหรี่ 10+ แบบเยอะมากก</span>
+          </div>
+          <p class="review">
+            ร้านนี้เอาจริงเรื่องแกงกะหรี่ น้ำแกงเข้มข้น
+            เลือกความเผ็ดได้เองเลยคับ เหมาะกับวันที่อยากลองอะไรใหม่ๆ
+          </p>
+          <div class="meta">
+            <span>11:00–15:00 และ 17:00–21:00 น.</span>
+            <span>ประมาณ 101–250฿/คน (จานละ 135–160฿) · อ้างอิง Wongnai</span>
+            <span>ซ.ศิริมังคลาจารย์ 3 อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Crazy%20Curry%20%E0%B8%84%E0%B8%A5%E0%B8%B1%E0%B9%88%E0%B8%87%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%81%E0%B8%B0%E0%B8%AB%E0%B8%A3%E0%B8%B5%E0%B9%88%E0%B8%8D%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%B8%E0%B9%88%E0%B8%99%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=Crazy%20Curry%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== FRIED CHICKEN ===== -->
+      <div class="section" id="chicken">
+        <div class="section-head"><h2>🍗 ไก่ทอด</h2></div>
+
+        <div class="card">
+          <div class="card-top">
+            <h3>Bonchon เซ็นทรัลเฟสติวัล เชียงใหม่</h3>
+          </div>
+          <div class="badges">
+            <span class="badge">ไก่ทอดเกาหลี</span
+            ><span class="badge">สาขาแรกในเชียงใหม่</span>
+          </div>
+          <p class="review">
+            กรอบนอกนุ่มใน เลือกได้ทั้งซอสหวานซอสเผ็ด อยู่ในห้างเดินทางง่าย
+            ไม่ต้องคิดเยอะ มีอีกสาขาที่นิ่มซิตี้ด้วยถ้าใกล้กว่า
+          </p>
+          <div class="meta">
+            <span>ศูนย์การค้าเซ็นทรัลเฟสติวัล เชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Bonchon%20Central%20Festival%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=Bonchon%20Central%20Festival%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <h3>Chick Shack Fried Chicken (ช้างเผือก)</h3>
+          </div>
+          <div class="badges">
+            <span class="badge">ไก่ทอดเกาหลี</span
+            ><span class="badge">ร้านเล็กราคาเบา</span>
+          </div>
+          <p class="review">
+            อีกร้านถ้าเบื่อ Bonchon แล้วอยากลองอะไรใหม่ๆ ไก่ทอดเกาหลีร้านเล็กๆ
+            ราคาไม่แพงคับ
+          </p>
+          <div class="meta">
+            <span>อังคาร–อาทิตย์ 09:30–23:59 น. (หยุดวันจันทร์)</span>
+            <span>ประมาณ 101–250฿/คน · อ้างอิง Wongnai</span>
+            <span>127 ถ.รัตนโกสินทร์ ต.ช้างเผือก อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Chick%20Shack%20Fried%20Chicken%20Chang%20Phueak%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=Chick%20Shack%20Fried%20Chicken%20Chang%20Phueak%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.wongnai.com/restaurants/1031467tB-chick-shack-fried-chicken"
+              target="_blank"
+              rel="noopener"
+              >ดูใน Wongnai</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BURGER + BBQ ===== -->
+      <div class="section" id="burger">
+        <div class="section-head"><h2>🍔 เบอร์เกอร์ + บาร์บีคิว</h2></div>
+
+        <div class="card">
+          <div class="card-top"><h3>Rock Me Burger &amp; Bar</h3></div>
+          <div class="badges">
+            <span class="badge">เบอร์เกอร์เจ้าดัง</span
+            ><span class="badge">มี 2 สาขา</span>
+          </div>
+          <p class="review">
+            เบอร์เกอร์คับมือ บรรยากาศร้านสนุกแบบร็อกๆ มีเพลงเปิดด้วย เมนูเด็ดคือ
+            Rock Star Burger
+          </p>
+          <div class="meta">
+            <span
+              >สาขาลอยเคราะห์ 11:00–23:15 น. / สาขานิมมาน 11:00–23:00 น.</span
+            >
+            <span>ประมาณ 150–300฿/คน (เมนูเด่น 240฿) · อ้างอิง Wongnai</span>
+            <span>ถ.ลอยเคราะห์ ต.ช้างคลาน หรือ ถ.นิมมานเหมินท์ ซอย 15</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Rock%20Me%20Burger%20Nimman%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=Rock%20Me%20Burger%20Nimman%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.wongnai.com/restaurants/rockmeburgers"
+              target="_blank"
+              rel="noopener"
+              >ดูใน Wongnai</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Smash Daddy's Burgers</h3></div>
+          <div class="badges">
+            <span class="badge">รางวัลเบอร์เกอร์ยอดนิยม 2023</span>
+          </div>
+          <p class="review">
+            สไตล์อเมริกันแท้ เนื้อ smash กรอบขอบ ได้รางวัล Favorite Hamburger
+            Chiangmai 2023 มีสาขาหางดงด้วย
+          </p>
+          <div class="meta">
+            <span
+              >อังคาร–เสาร์ 12:00–22:00 น. / อาทิตย์ 12:00–19:00 น.
+              (หยุดวันจันทร์)</span
+            >
+            <span>ประมาณ 150–300฿/คน · อ้างอิง Wongnai</span>
+            <span>29 ถ.ห้วยแก้ว ต.ช้างเผือก อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Smash%20Daddy%27s%20Burgers%20Huay%20Kaew%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=Smash%20Daddy%27s%20Burgers%20Huay%20Kaew%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.wongnai.com/restaurants/2434077hj-smash-daddy-s-burgers"
+              target="_blank"
+              rel="noopener"
+              >ดูใน Wongnai</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Dinky's BBQ</h3></div>
+          <div class="badges">
+            <span class="badge">เท็กซัสแท้</span
+            ><span class="badge">ร้านลับหลังมช.</span>
+          </div>
+          <p class="review">
+            บาร์บีคิวสไตล์เท็กซัสของจริง brisket รมควันช้า ซี่โครง หมูดึง
+            เป็นร้านลับๆ แถวหลังมช. บรรยากาศกันเอง
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 11:00–21:00 น.</span>
+            <span>ประมาณ 251–500฿/คน · อ้างอิง Wongnai</span>
+            <span>ลานเสี่ยว 175 ซ.วัดอุโมงค์ ต.สุเทพ อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Dinky%27s%20BBQ%20Wat%20Umong%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=Dinky%27s%20BBQ%20Wat%20Umong%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.wongnai.com/restaurants/929333Qm-dinky-bbq"
+              target="_blank"
+              rel="noopener"
+              >ดูใน Wongnai</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== KHAO SOI ===== -->
+      <div class="section" id="khaosoi">
+        <div class="section-head"><h2>🍜 ข้าวซอย</h2></div>
+        <p class="section-note">ร้านเล็กๆ ที่คนเชียงใหม่กินกันมานาน</p>
+
+        <div class="card">
+          <div class="card-top"><h3>ข้าวซอยเสมอใจ</h3></div>
+          <div class="badges">
+            <span class="badge">ร้านเล็กน่ารัก</span
+            ><span class="badge">เปิดมา 30+ ปี</span>
+          </div>
+          <p class="review">
+            เปิดมานานมากแล้ว น้ำแกงเข้มข้นกลมกล่อม ร้านเล็กๆ บรรยากาศสบายๆ
+            แบบร้านท้องถิ่นจริงๆ แวะกินมื้อเที่ยงได้เรื่อยๆ
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 08:00–17:00 น.</span>
+            <span>391 ต.ฟ้าฮ่าม อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AA%E0%B8%A1%E0%B8%AD%E0%B9%83%E0%B8%88%20391%20%E0%B8%9F%E0%B9%89%E0%B8%B2%E0%B8%AE%E0%B9%88%E0%B8%B2%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AA%E0%B8%A1%E0%B8%AD%E0%B9%83%E0%B8%88%20391%20%E0%B8%9F%E0%B9%89%E0%B8%B2%E0%B8%AE%E0%B9%88%E0%B8%B2%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>ข้าวซอยแม่สาย</h3></div>
+          <div class="badges">
+            <span class="badge">ร้านเล็กน่ารัก</span
+            ><span class="badge">คิวยาวแต่คุ้ม</span>
+          </div>
+          <p class="review">
+            เส้นกรอบเป็นจุดเด่นของร้านนี้เลย รสชาติกลมกล่อม คนต่อคิวเยอะอยู่นะ
+            555 ไปเช้าหน่อยจะได้ไม่ต้องรอนาน
+          </p>
+          <div class="meta">
+            <span>จันทร์–เสาร์ 08:00–16:00 น.</span>
+            <span>29/1 ซ.ราชพฤกษ์ ต.ช้างเผือก อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2%20%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%9C%E0%B8%B7%E0%B8%AD%E0%B8%81%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2%20%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%9C%E0%B8%B7%E0%B8%AD%E0%B8%81%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== NEAR PAYAP UNIVERSITY ===== -->
+      <div class="section" id="payap">
+        <div class="section-head"><h2>🏠 ใกล้ ม.พายัพ</h2></div>
+        <p class="section-note">
+          ผมลองเลือกร้านที่คนไม่เยอะ เงียบๆ นั่งสบายใจไว้ในนี้
+          เผื่อวันไหนอยากไปกินแบบไม่รีบกลับคับผม
+        </p>
+
+        <div class="card">
+          <div class="card-top"><h3>ลำดีตี้ขัวแดง</h3></div>
+          <div class="badges">
+            <span class="badge">อาหารเหนือต้นตำรับ</span
+            ><span class="badge">การันตี Michelin Guide</span>
+          </div>
+          <p class="review">
+            ร้านอาหารเหนือ ที่นั่งเยอะ ที่จอดรถกว้าง บรรยากาศไม่แน่นอึดอัดคับ
+            เมนูเด่นคือแกงฮังเล เหมาะกับมื้อเย็นแบบไม่รีบมาก
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 10:30–21:00 น.</span>
+            <span>ประมาณ 101–500฿/คน</span>
+            <span
+              >345 ม.3 ต.สันพระเนตร อ.สันทราย (โซน V community
+              หลังม.พายัพ)</span
+            >
+          </div>
+          <div class="tip">คนไม่ค่อยเยอะ นั่งชิลได้จริงคับ</div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%A5%E0%B8%B3%E0%B8%94%E0%B8%B5%E0%B8%95%E0%B8%B5%E0%B9%89%E0%B8%82%E0%B8%B1%E0%B8%A7%E0%B9%81%E0%B8%94%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%A5%E0%B8%B3%E0%B8%94%E0%B8%B5%E0%B8%95%E0%B8%B5%E0%B9%89%E0%B8%82%E0%B8%B1%E0%B8%A7%E0%B9%81%E0%B8%94%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>On the Way Cafe (สาขา ม.พายัพ)</h3></div>
+          <div class="badges">
+            <span class="badge">ร้านเล็กในซอย</span
+            ><span class="badge">คนท้องถิ่นไปกัน</span>
+          </div>
+          <p class="review">
+            คาเฟ่เล็กๆ อยู่หลัง ม.พายัพเลย ไม่ใช่ร้านฮิตติดกระแส
+            คนเลยไม่พลุกพล่าน เหมาะกับวันที่อยากนั่งเงียบๆ จิบกาแฟชิลๆ
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 07:00–17:00 น. (โดยประมาณ)</span>
+            <span>ราคาต่ำกว่า 100฿/คน · อ้างอิง Wongnai</span>
+            <span
+              >111/43 ม.1 ต.หนองป่าครั่ง (จากปั๊ม ปตท. หลัง ม.พายัพ
+              เข้าซอย)</span
+            >
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=On%20the%20Way%20Cafe%20%E0%B8%A1.%E0%B8%9E%E0%B8%B2%E0%B8%A2%E0%B8%B1%E0%B8%9E%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=On%20the%20Way%20Cafe%20%E0%B8%A1.%E0%B8%9E%E0%B8%B2%E0%B8%A2%E0%B8%B1%E0%B8%9E%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== NEAR WAT RAM PENG ===== -->
+      <div class="section" id="rampeng">
+        <div class="section-head"><h2>🍜 แถวสุเทพ (ร่ำเปิง-โป่งน้อย)</h2></div>
+        <p class="section-note">
+          โซนนี้ไกลจากพายัพหน่อยคับ ไม่ต้องรีบไปก็ได้
+          เก็บไว้เผื่อวันไหนมีเวลาจริงๆ แล้วอยากขับรถเที่ยวเล่นแถวนี้
+        </p>
+
+        <div class="card">
+          <div class="card-top"><h3>Adirak Pizza (สาขาวัดร่ำเปิง)</h3></div>
+          <div class="badges">
+            <span class="badge">พิซซ่าเตาถ่าน</span
+            ><span class="badge">คนนิยมเยอะ</span>
+          </div>
+          <p class="review">
+            พิซซ่าเตาถ่านเจ้าดังของเชียงใหม่ แป้งบางกรอบ หน้าเยอะ
+            คนไปกันเยอะอยู่นะคับ 555 เผื่อวันไหนอยากลองอะไรอร่อยๆ แบบไม่รีบ
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 11:00–22:00 น.</span>
+            <span>ประมาณ 251–500฿/คน · อ้างอิง Wongnai</span>
+            <span>11/15 ซ.ดอกแก้ว 7 ต.สุเทพ อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Adirak%20Pizza%20%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=Adirak%20Pizza%20%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.wongnai.com/restaurants/3512626pS-adirak-pizza-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%87"
+              target="_blank"
+              rel="noopener"
+              >ดูใน Wongnai</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>ก๋วยเตี๋ยวปายฟ้า</h3></div>
+          <div class="badges">
+            <span class="badge">ร้านเก่าบรรยากาศวินเทจ</span
+            ><span class="badge">สั่งเมนูแบบจดสมุด</span>
+          </div>
+          <p class="review">
+            ร้านก๋วยเตี๋ยวเก่าแก่ ตกแต่งย้อนยุคน่ารักๆ สั่งเมนูแบบจดใส่สมุด
+            ต้มยำรสจัดจ้านดี เหมาะกับมื้อเที่ยงเบาๆ ไม่ต้องรีบกลับคับ
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 09:30–16:00 น.</span>
+            <span>ราคาต่ำกว่า 100฿/คน (ต้มยำ ~35–45฿) · อ้างอิง Wongnai</span>
+            <span>ซ.5 รื่นรมย์ ต.สุเทพ อ.เมืองเชียงใหม่ (ใกล้วัดร่ำเปิง)</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%81%E0%B9%8B%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%95%E0%B8%B5%E0%B9%8B%E0%B8%A2%E0%B8%A7%E0%B8%9B%E0%B8%B2%E0%B8%A2%E0%B8%9F%E0%B9%89%E0%B8%B2%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%81%E0%B9%8B%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%95%E0%B8%B5%E0%B9%8B%E0%B8%A2%E0%B8%A7%E0%B8%9B%E0%B8%B2%E0%B8%A2%E0%B8%9F%E0%B9%89%E0%B8%B2%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.wongnai.com/restaurants/25968UX-%E0%B8%81%E0%B9%8B%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%95%E0%B8%B5%E0%B9%8B%E0%B8%A2%E0%B8%A7%E0%B8%9B%E0%B8%B2%E0%B8%A2%E0%B8%9F%E0%B9%89%E0%B8%B2"
+              target="_blank"
+              rel="noopener"
+              >ดูใน Wongnai</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>ชามเช้า</h3></div>
+          <div class="badges">
+            <span class="badge">มื้อเช้าวินเทจ</span
+            ><span class="badge">หยุดวันจันทร์</span>
+          </div>
+          <p class="review">
+            ร้านมื้อเช้าน่ารักๆ ใกล้วัดร่ำเปิง เมนูเด่นคือไข่กะทะกับไข่น้ำ
+            เหมาะกับเช้าวันที่อยากตื่นมากินอะไรอุ่นๆ ก่อนเริ่มวัน
+          </p>
+          <div class="meta">
+            <span
+              >อังคาร–เสาร์ 07:00–13:00 น. / อาทิตย์ 08:00–13:00 น.
+              (หยุดจันทร์)</span
+            >
+            <span>ราคาต่ำกว่า 100฿/คน (ไข่กะทะ 40฿) · อ้างอิง Wongnai</span>
+            <span>68 ซ.กรุณา ต.สุเทพ อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%8A%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%8A%E0%B9%89%E0%B8%B2%20%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%8A%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%8A%E0%B9%89%E0%B8%B2%20%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.wongnai.com/restaurants/453229fX-%E0%B8%8A%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%8A%E0%B9%89%E0%B8%B2"
+              target="_blank"
+              rel="noopener"
+              >ดูใน Wongnai</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>ลาบลุงต๋อง</h3></div>
+          <div class="badges">
+            <span class="badge spicy">ลาบเมืองแซ่บ</span
+            ><span class="badge">ราคาชาวบ้าน</span>
+          </div>
+          <p class="review">
+            ร้านลาบเล็กๆ ข้างวัดโป่งน้อย เส้นหลังมช. รสชาติแบบคนพื้นที่
+            ราคาไม่แพง เมนูเด็ดคือลาบหมูคั่วกับจิ้นส้มหมกไข่ กบทอดกระเทียมก็เด็ด
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 11:00–20:00 น.</span>
+            <span
+              >ราคาต่ำกว่า 100฿/คน (3.7★ จาก Wongnai) · เมนูเด่น ลาบหมูคั่ว,
+              หมูกรอบผัดพริกเกลือ, จิ้นส้มหมกไข่, กบทอดกระเทียม</span
+            >
+            <span>4/2 ซ.หน้าวัดโป่งน้อย 13 ต.สุเทพ อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="tip">อันนี้พี่เนียร์เคยพูดถึงเลยคับ เก็บไว้ให้ละ 555</div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%A5%E0%B8%B2%E0%B8%9A%E0%B8%A5%E0%B8%B8%E0%B8%87%E0%B8%95%E0%B9%8B%E0%B8%AD%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%20%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%82%E0%B8%9B%E0%B9%88%E0%B8%87%E0%B8%99%E0%B9%89%E0%B8%AD%E0%B8%A2"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%A5%E0%B8%B2%E0%B8%9A%E0%B8%A5%E0%B8%B8%E0%B8%87%E0%B8%95%E0%B9%8B%E0%B8%AD%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%20%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%82%E0%B8%9B%E0%B9%88%E0%B8%87%E0%B8%99%E0%B9%89%E0%B8%AD%E0%B8%A2"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.wongnai.com/restaurants/2689526pX-%E0%B8%A5%E0%B8%B2%E0%B8%9A%E0%B8%A5%E0%B8%B8%E0%B8%87%E0%B8%95%E0%B9%8B%E0%B8%AD%E0%B8%87-%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูใน Wongnai</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <h3>ก๋วยจั๊บโป่งน้อย & Coffee (บ้านลานปูน)</h3>
+          </div>
+          <div class="badges">
+            <span class="badge">ก๋วยจั๊บ + กาแฟ</span
+            ><span class="badge">ร้านในบ้าน มีต้นไม้กลางร้าน</span>
+          </div>
+          <p class="review">
+            ร้านเล็กๆ อยู่ในบ้าน ตรง 4 แยกใกล้โรงเรียนบ้านโป่งน้อย
+            มีต้นไม้อยู่กลางร้านด้วย บรรยากาศเงียบๆ
+            กินก๋วยจั๊บแล้วนั่งจิบกาแฟต่อได้เลย
+          </p>
+          <div class="meta">
+            <span
+              >จ.-อ. และ พฤ. 09:00–14:00 น. / ศ. 09:00–15:00 น. / ส.-อา.
+              09:00–14:00 น. (หยุดวันพุธ)</span
+            >
+            <span>ราคาต่ำกว่า 100฿/คน · อ้างอิง Wongnai</span>
+            <span>9/1 ม.6 ต.สุเทพ อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%81%E0%B9%8B%E0%B8%A7%E0%B8%A2%E0%B8%88%E0%B8%B1%E0%B9%8A%E0%B8%9A%E0%B9%82%E0%B8%9B%E0%B9%88%E0%B8%87%E0%B8%99%E0%B9%89%E0%B8%AD%E0%B8%A2%20Coffee%20%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%A5%E0%B8%B2%E0%B8%99%E0%B8%9B%E0%B8%B9%E0%B8%99%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%81%E0%B9%8B%E0%B8%A7%E0%B8%A2%E0%B8%88%E0%B8%B1%E0%B9%8A%E0%B8%9A%E0%B9%82%E0%B8%9B%E0%B9%88%E0%B8%87%E0%B8%99%E0%B9%89%E0%B8%AD%E0%B8%A2%20Coffee%20%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%A5%E0%B8%B2%E0%B8%99%E0%B8%9B%E0%B8%B9%E0%B8%99%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.wongnai.com/restaurants/2908034Ue-cha-b-chu"
+              target="_blank"
+              rel="noopener"
+              >ดูใน Wongnai</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SIGHTSEEING ===== -->
+      <div class="section" id="trip">
+        <div class="section-head"><h2>🏞️ เที่ยวชิลๆ</h2></div>
+        <p class="section-note">
+          เผื่อวันไหนไม่อยากกินอย่างเดียว อยากออกไปเดินเล่นดูอะไรบ้าง
+        </p>
+
+        <div class="card">
+          <div class="card-top"><h3>วัดพระธาตุดอยสุเทพ</h3></div>
+          <div class="badges">
+            <span class="badge">วิวเมืองเชียงใหม่</span
+            ><span class="badge">แลนด์มาร์คคู่เมือง</span>
+          </div>
+          <p class="review">
+            วัดคู่บ้านคู่เมืองเชียงใหม่ อยู่บนดอย
+            ขึ้นไปแล้วเห็นวิวเมืองทั้งเมืองเลย ช่วงเช้าหรือเย็นอากาศเย็นสบาย
+            ไม่ร้อนมาก
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน ประมาณ 06:00–18:00 น.</span>
+            <span>ค่าเข้าคนไทย 30 บาท</span>
+            <span>ต.สุเทพ อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%98%E0%B8%B2%E0%B8%95%E0%B8%B8%E0%B8%94%E0%B8%AD%E0%B8%A2%E0%B8%AA%E0%B8%B8%E0%B9%80%E0%B8%97%E0%B8%9E"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%98%E0%B8%B2%E0%B8%95%E0%B8%B8%E0%B8%94%E0%B8%AD%E0%B8%A2%E0%B8%AA%E0%B8%B8%E0%B9%80%E0%B8%97%E0%B8%9E"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>ถนนคนเดินท่าแพ (วันอาทิตย์)</h3></div>
+          <div class="badges">
+            <span class="badge">ตลาดเดินเล่นตอนเย็น</span
+            ><span class="badge">เฉพาะวันอาทิตย์</span>
+          </div>
+          <p class="review">
+            เดินเล่นชิลๆ ตอนเย็นวันอาทิตย์ มีของกิน ของแฮนด์เมด เพลงเปิดข้างทาง
+            บรรยากาศคึกคักน่ารักดี เดินได้เรื่อยๆ ไม่ต้องรีบ
+          </p>
+          <div class="meta">
+            <span>ทุกวันอาทิตย์ ประมาณ 16:00–22:00 น.</span>
+            <span>ถ.ราชดำเนิน (จากประตูท่าแพถึงวัดพระสิงห์)</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%84%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B9%81%E0%B8%9E%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%84%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B9%81%E0%B8%9E%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== TRY SOMETHING / RELAX ===== -->
+      <div class="section" id="fun">
+        <div class="section-head">
+          <h2>🎨 ถ้าอยากลองทำอะไรเล่นๆ / พักใจ</h2>
+        </div>
+        <p class="section-note">
+          บางทีไม่ต้องกินอะไร แค่ไปนั่งชิลๆ หรือลองทำอะไรสนุกๆ ก็พอ
+        </p>
+
+        <div class="card">
+          <div class="card-top"><h3>Littlerose Homemade Pastry</h3></div>
+          <div class="badges">
+            <span class="badge">คอร์สสอนทำขนม/เค้ก</span
+            ><span class="badge">มีทั้งออนไลน์และเรียนสด</span>
+          </div>
+          <p class="review">
+            สตูดิโอสอนทำขนมในเชียงใหม่ มีคอร์สเยอะมาก ทั้งเค้ก มัทฉะ มูฮยี
+            คุกกี้ ขนมปัง เลือกเรียนได้ทั้งออนไลน์หรือไปเรียนที่สตูดิโอเลย
+            เผื่อวันไหนพี่เนียร์อยากลองทำเค้กเล่นๆ
+          </p>
+          <div class="meta">
+            <span>มีคอร์สให้เลือกทั้งออนไลน์และเรียนสดที่สตูดิโอ</span>
+            <span>เชียงใหม่</span>
+          </div>
+          <div class="tip">
+            "Little Rose (n.) A Place where love is baked" คับ 555
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://littlerosepastry.com/"
+              target="_blank"
+              rel="noopener"
+              >เว็บไซต์</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.facebook.com/LittleRoseHomeMadePastry"
+              target="_blank"
+              rel="noopener"
+              >เฟซบุ๊กร้าน</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>บ้านข้างวัด (Baan Kang Wat)</h3></div>
+          <div class="badges">
+            <span class="badge">คอมมูนิตี้อาร์ตๆ</span
+            ><span class="badge">หยุดวันจันทร์</span>
+          </div>
+          <p class="review">
+            ชุมชนงานอาร์ตแอนด์คราฟต์เล็กๆ อยู่ในซอยวัดอุโมงค์
+            ตึกไม้บรรยากาศร่มรื่น มีทั้งคาเฟ่ ร้านขายของแฮนด์เมด สตูดิโองานฝีมือ
+            เดินเล่นชิลๆ ได้ทั้งวัน
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 10:00–18:00 น. (หยุดวันจันทร์)</span>
+            <span>ซ.วัดอุโมงค์ ต.สุเทพ อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%A7%E0%B8%B1%E0%B8%94%20Baan%20Kang%20Wat%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%A7%E0%B8%B1%E0%B8%94%20Baan%20Kang%20Wat%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== NEAR TRAIN STATION ===== -->
+      <div class="section" id="train">
+        <div class="section-head"><h2>🚂 แถวสถานีรถไฟเชียงใหม่</h2></div>
+        <p class="section-note">ย่านนี้ของกินเก่าแก่เยอะ ราคาถูกใจคนพื้นที่</p>
+
+        <div class="card">
+          <div class="card-top"><h3>ไก่ทอดจอย</h3></div>
+          <div class="badges">
+            <span class="badge">ไก่ทอดเจ้าเก่า 30+ ปี</span
+            ><span class="badge">ข้างสถานีรถไฟ</span>
+          </div>
+          <p class="review">
+            ร้านไก่ทอดเจ้าเก่าแก่ อยู่ข้างสถานีรถไฟเชียงใหม่มานานกว่า 30 ปี
+            ไก่ทอดกรอบนอกนุ่มใน มีหมูสามชั้น ไส้อั่ว น้ำพริกแดงด้วย
+            กินกับข้าวเหนียวร้อนๆ อร่อยเลยคับ
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 07:00–19:00 น.</span>
+            <span>ประมาณ 101–250฿/คน</span>
+            <span>ข้างสถานีรถไฟเชียงใหม่ (เลย 7-11 ไปประมาณ 50 ม.)</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B9%84%E0%B8%81%E0%B9%88%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%88%E0%B8%AD%E0%B8%A2%20%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%A3%E0%B8%96%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B9%84%E0%B8%81%E0%B9%88%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%88%E0%B8%AD%E0%B8%A2%20%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%A3%E0%B8%96%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>ลาบจันทร์หอม</h3></div>
+          <div class="badges">
+            <span class="badge spicy">อาหารเหนือต้นตำรับ</span
+            ><span class="badge">ร้านในตำนาน 50+ ปี</span>
+          </div>
+          <p class="review">
+            ร้านลาบในตำนานของเชียงใหม่ ก่อตั้งโดยคุณยายจันทร์หอมมากว่า 50 ปี
+            เมนูไม่เยอะแต่เด็ดทุกอย่าง ลาบหมู ลาบเนื้อ แกงอ่อม ไส้อั่ว แอ๊บหมู
+            จิ้นส้มหมก บรรยากาศร้านบ้านๆ แต่รสชาติต้นตำรับจริงคับ
+          </p>
+          <div class="meta">
+            <span>ราคาต่ำกว่า 100฿/คน (เมนูเบาๆ ~40–50฿)</span>
+            <span>ริมถนนเยื้องกับสถานีรถไฟเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%A5%E0%B8%B2%E0%B8%9A%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C%E0%B8%AB%E0%B8%AD%E0%B8%A1%20%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%A3%E0%B8%96%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%A5%E0%B8%B2%E0%B8%9A%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C%E0%B8%AB%E0%B8%AD%E0%B8%A1%20%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%A3%E0%B8%96%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== DESSERT ===== -->
+      <div class="section" id="dessert">
+        <div class="section-head"><h2>🍨 ขนมหวาน</h2></div>
+        <p class="section-note">เผื่อกินคาวเสร็จแล้วยังไม่จุใจ</p>
+
+        <div class="card">
+          <div class="card-top"><h3>Sofuto Cream หลังมช.</h3></div>
+          <div class="badges">
+            <span class="badge">ซอฟต์ครีมสไตล์ญี่ปุ่น</span>
+          </div>
+          <p class="review">
+            ซอฟต์ครีมชื่อดังของเชียงใหม่ รสชาติเข้มข้นแบบญี่ปุ่นแท้ๆ
+            นั่งชิลแถวหลังมช.ได้เลย
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 11:00–23:00 น.</span>
+            <span>PP Place ถ.สุเทพ ต.สุเทพ อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Sofuto%20Cream%20Suthep%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=Sofuto%20Cream%20Suthep%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.wongnai.com/restaurants/sofutocream"
+              target="_blank"
+              rel="noopener"
+              >ดูใน Wongnai</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>ขนมหวานช้างม่อย</h3></div>
+          <div class="badges">
+            <span class="badge">ร้านเก่าแก่</span
+            ><span class="badge">เปิดดึก</span>
+          </div>
+          <p class="review">
+            ร้านขนมหวานคู่เมืองเชียงใหม่ ตักใส่จานเลือกเองได้หลายอย่าง
+            คิดราคาตามสีจาน เปิดยันตีหนึ่ง เหมาะกับมื้อดึก
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 17:00–01:00 น.</span>
+            <span>เริ่มต้น 35฿ (คิดตามสีจาน) · อ้างอิง Wongnai</span>
+            <span>169 ถ.ช้างม่อย ต.ช้างม่อย อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%AB%E0%B8%A7%E0%B8%B2%E0%B8%99%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%A1%E0%B9%88%E0%B8%AD%E0%B8%A2%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%AB%E0%B8%A7%E0%B8%B2%E0%B8%99%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%A1%E0%B9%88%E0%B8%AD%E0%B8%A2%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>ขนมแม่ Kanom-Mae (สาขาหลังมช.)</h3></div>
+          <div class="badges">
+            <span class="badge">ขนมไทยประยุกต์</span
+            ><span class="badge">บัวลอยมีไส้</span>
+          </div>
+          <p class="review">
+            ขนมไทยสูตรแม่ ทำแบบประยุกต์ให้ทันสมัยขึ้น
+            เมนูซิกเนเจอร์คือบัวลอยมีไส้ มีหลายสาขาในเชียงใหม่
+          </p>
+          <div class="meta">
+            <span>เปิดทุกวัน 13:00–22:00 น.</span>
+            <span>14/4 ม.8 ต.สุเทพ อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B9%81%E0%B8%A1%E0%B9%88%20Kanom-Mae%20%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%A1%E0%B8%8A%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B9%81%E0%B8%A1%E0%B9%88%20Kanom-Mae%20%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%A1%E0%B8%8A%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Rabbit Friday.CHOUX</h3></div>
+          <div class="badges">
+            <span class="badge">ชูครีมสไตล์ญี่ปุ่น</span
+            ><span class="badge">ร้านลับ</span>
+          </div>
+          <p class="review">
+            ชูครีมน่ารักๆ หวานกำลังดีไม่หวานแหลม เป็นร้านเล็กๆ แถวใกล้วัดอุโมงค์
+            เหมาะแวะซื้อกลับ
+          </p>
+          <div class="meta">
+            <span>โทรเช็คก่อน 096-563-4134</span>
+            <span>ใกล้วัดอุโมงค์ (ตรงข้าม 7-11) ต.สุเทพ อ.เมืองเชียงใหม่</span>
+          </div>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Rabbit%20Friday%20Choux%20Wat%20Umong%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >ดูแผนที่</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/dir/?api=1&destination=Rabbit%20Friday%20Choux%20Wat%20Umong%20Chiang%20Mai"
+              target="_blank"
+              rel="noopener"
+              >นำทาง</a
+            >
+            <a
+              class="btn btn-text"
+              href="https://www.facebook.com/rabbitfriday.choux/?locale=th_TH"
+              target="_blank"
+              rel="noopener"
+              >เพจร้านคับ</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="seabed" aria-hidden="true">
+        <div class="seabed-scene">
+          <!-- left corner cluster -->
+          <div class="seabed-item sb-rock" style="left: -2%; width: 76px">
+            <svg viewBox="0 0 60 30" fill="currentColor">
+              <path
+                d="M2 30 C0 18 10 10 20 12 C24 4 38 2 44 10 C54 8 60 16 58 24 C58 28 54 30 50 30 Z"
+              />
+            </svg>
+          </div>
+          <div
+            class="seabed-item sb-starfish"
+            style="left: 2%; width: 18px; bottom: 36px"
+          >
+            <svg viewBox="0 0 40 40" fill="currentColor">
+              <path
+                d="M20 2 L25 15 L38 15 L27 24 L31 38 L20 29 L9 38 L13 24 L2 15 L15 15 Z"
+              />
+            </svg>
+          </div>
+          <div
+            class="seabed-item sb-seaweed"
+            style="left: 9%; width: 16px; bottom: -2px"
+          >
+            <svg
+              viewBox="0 0 20 60"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+            >
+              <path d="M10 60 C4 50 16 42 10 32 C4 22 16 14 10 2" />
+            </svg>
+          </div>
+          <div class="seabed-item sb-coral" style="left: 16%; width: 28px">
+            <svg
+              viewBox="0 0 40 50"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linecap="round"
+            >
+              <path
+                d="M20 50 L20 30 M20 34 L10 18 M20 30 L30 14 M20 22 L14 6 M20 22 L26 6"
+              />
+            </svg>
+          </div>
+
+          <!-- crab wandering the open sand in the middle -->
+          <div class="seabed-item sb-crab" style="left: 46%; width: 46px">
+            <svg viewBox="0 0 50 30" fill="currentColor">
+              <ellipse cx="25" cy="16" rx="14" ry="9" />
+              <path
+                d="M11 12 C4 8 2 2 4 0 M6 10 L2 6 M39 12 C46 8 48 2 46 0 M44 10 L48 6"
+                stroke="currentColor"
+                stroke-width="2.5"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <path
+                d="M13 24 L6 28 M18 26 L14 30 M32 26 L36 30 M37 24 L44 28"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <circle cx="20" cy="14" r="1.6" fill="#fff" />
+              <circle cx="30" cy="14" r="1.6" fill="#fff" />
+            </svg>
+          </div>
+
+          <!-- right corner cluster -->
+          <div class="seabed-item sb-coral alt" style="left: 75%; width: 24px">
+            <svg
+              viewBox="0 0 40 50"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linecap="round"
+            >
+              <path
+                d="M20 50 L20 30 M20 34 L10 18 M20 30 L30 14 M20 22 L14 6 M20 22 L26 6"
+              />
+            </svg>
+          </div>
+          <div class="seabed-item sb-rock" style="left: 83%; width: 62px">
+            <svg viewBox="0 0 60 30" fill="currentColor">
+              <path
+                d="M2 30 C0 18 10 10 20 12 C24 4 38 2 44 10 C54 8 60 16 58 24 C58 28 54 30 50 30 Z"
+              />
+            </svg>
+          </div>
+          <div
+            class="seabed-item sb-starfish"
+            style="left: 87%; width: 18px; bottom: 30px"
+          >
+            <svg viewBox="0 0 40 40" fill="currentColor">
+              <path
+                d="M20 2 L25 15 L38 15 L27 24 L31 38 L20 29 L9 38 L13 24 L2 15 L15 15 Z"
+              />
+            </svg>
+          </div>
+          <div
+            class="seabed-item sb-seaweed"
+            style="left: 95%; width: 13px; bottom: -2px"
+          >
+            <svg
+              viewBox="0 0 20 60"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+            >
+              <path d="M10 60 C4 50 16 42 10 32 C4 22 16 14 10 2" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div>อัปเดต จากน้องเต็นท์เอง 🫶🏻</div>
+        <a
+          class="ig-btn"
+          href="https://www.instagram.com/tenttenttenttent/"
+          target="_blank"
+          rel="noopener"
+          >-> ถ้าพี่เนียร์สงสัยอะไรกดตรงนี้เลย <-</a
+        >
+      </footer>
     </div>
 
-    <div class="card">
-      <div class="card-top"><h3>ควันจุ๊งจุ๊ง หมาล่า (สาขารวมโชค)</h3></div>
-      <div class="badges"><span class="badge spicy">เผ็ดถึงใจ</span><span class="badge">เมนูซี่โครงหมูเด็ด</span></div>
-      <p class="review">หมาล่าปิ้งย่างที่คนรีวิวชมเรื่องความหอมของเครื่องเทศ เมนูแนะนำคือซี่โครงหมูกับมันฝรั่งเสียบไม้ บรรยากาศร้านเป็นกันเอง เหมาะกับมื้อค่ำแบบชิลๆ</p>
-      <div class="meta">
-        <span>🕒 เปิดทุกวัน 18:00–00:00 น.</span>
-        <span>📍 ต.ฟ้าฮ่าม อ.เมืองเชียงใหม่</span>
-      </div>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%84%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%88%E0%B8%B8%E0%B9%8A%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%8A%E0%B8%87%20%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%20%E0%B8%9F%E0%B9%89%E0%B8%B2%E0%B8%AE%E0%B9%88%E0%B8%B2%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">📍 ดูแผนที่</a>
-        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%84%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%88%E0%B8%B8%E0%B9%8A%E0%B8%87%E0%B8%88%E0%B8%B8%E0%B9%8A%E0%B8%87%20%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A5%E0%B9%88%E0%B8%B2%20%E0%B8%9F%E0%B9%89%E0%B8%B2%E0%B8%AE%E0%B9%88%E0%B8%B2%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">🧭 นำทาง</a>
-      </div>
-    </div>
-  </div>
+    <script>
+      (function () {
+        function bangkokHour() {
+          try {
+            var str = new Date().toLocaleString("en-US", {
+              timeZone: "Asia/Bangkok",
+              hour: "numeric",
+              hour12: false,
+            });
+            return parseInt(str, 10) % 24;
+          } catch (e) {
+            return new Date().getHours();
+          }
+        }
 
-  <!-- ===== CURRY ===== -->
-  <div class="section" id="curry">
-    <div class="section-head"><h2>🍛 แกงกะหรี่</h2></div>
-    <p class="section-note">เผื่อวันไหนไม่อยากทำกินเอง</p>
+        function applyTimeTheme() {
+          var hero = document.querySelector(".hero");
+          if (!hero) return;
+          var h = bangkokHour();
+          hero.classList.remove("time-morning", "time-day", "time-night");
+          if (h >= 5 && h < 11) {
+            hero.classList.add("time-morning");
+          } else if (h >= 11 && h < 18) {
+            hero.classList.add("time-day");
+          } else {
+            hero.classList.add("time-night");
+          }
+        }
 
-    <div class="card">
-      <div class="card-top"><h3>Santoku Japanese Hot Kitchen</h3></div>
-      <div class="badges"><span class="badge">แกงกะหรี่ญี่ปุ่น</span><span class="badge">ปรุงสุก</span></div>
-      <p class="review">ร้านอาหารญี่ปุ่นที่ขึ้นชื่อเรื่องแกงกะหรี่รสเข้มข้น เสิร์ฟร้อนๆ พร้อมข้าว บรรยากาศร้านกะทัดรัด อบอุ่น เหมาะกับมื้อเย็นแบบไม่รีบ</p>
-      <div class="meta">
-        <span>🕒 17:00–22:00 น. (หยุดวันจันทร์)</span>
-        <span>📍 อ.เมืองเชียงใหม่</span>
-      </div>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Santoku%20Japanese%20Hot%20Kitchen%20Chiang%20Mai" target="_blank" rel="noopener">📍 ดูแผนที่</a>
-        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=Santoku%20Japanese%20Hot%20Kitchen%20Chiang%20Mai" target="_blank" rel="noopener">🧭 นำทาง</a>
-      </div>
-    </div>
+        applyTimeTheme();
+        setInterval(applyTimeTheme, 10 * 60 * 1000);
 
-    <div class="card">
-      <div class="card-top"><h3>Crazy Curry คลั่งแกงกะหรี่ญี่ปุ่น</h3></div>
-      <div class="badges"><span class="badge">เมนูแกงกะหรี่ 10+ แบบ</span></div>
-      <p class="review">ร้านเฉพาะทางแกงกะหรี่ญี่ปุ่น น้ำแกงเข้มข้นจาก base ไก่ มีให้เลือกหลายระดับความเผ็ด เหมาะกับคนชอบลองรสชาติใหม่ๆ</p>
-      <div class="meta">
-        <span>📍 อ.เมืองเชียงใหม่</span>
-      </div>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Crazy%20Curry%20%E0%B8%84%E0%B8%A5%E0%B8%B1%E0%B9%88%E0%B8%87%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%81%E0%B8%B0%E0%B8%AB%E0%B8%A3%E0%B8%B5%E0%B9%88%E0%B8%8D%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%B8%E0%B9%88%E0%B8%99%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">📍 ดูแผนที่</a>
-        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=Crazy%20Curry%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">🧭 นำทาง</a>
-      </div>
-    </div>
-  </div>
+        // ---- scroll-spy: highlight the nav pill for the section in view ----
+        var navLinks = Array.prototype.slice.call(
+          document.querySelectorAll(".nav a[href^='#']"),
+        );
+        var sections = navLinks
+          .map(function (link) {
+            var id = link.getAttribute("href").slice(1);
+            return document.getElementById(id);
+          })
+          .filter(Boolean);
+        if (sections.length && "IntersectionObserver" in window) {
+          var setActive = function (id) {
+            navLinks.forEach(function (link) {
+              link.classList.toggle(
+                "active",
+                link.getAttribute("href") === "#" + id,
+              );
+            });
+          };
+          var observer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  setActive(entry.target.id);
+                }
+              });
+            },
+            { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
+          );
+          sections.forEach(function (section) {
+            observer.observe(section);
+          });
+        }
 
-  <!-- ===== FRIED CHICKEN ===== -->
-  <div class="section" id="chicken">
-    <div class="section-head"><h2>🍗 ไก่ทอด</h2></div>
+        var randomBtn = document.getElementById("randomBtn");
+        if (randomBtn) {
+          randomBtn.addEventListener("click", function () {
+            var cards = document.querySelectorAll(".card");
+            if (!cards.length) return;
+            cards.forEach(function (c) {
+              c.classList.remove("picked");
+            });
+            var pick = cards[Math.floor(Math.random() * cards.length)];
+            pick.classList.add("picked");
+            pick.scrollIntoView({ behavior: "smooth", block: "center" });
+          });
+        }
 
-    <div class="card">
-      <div class="card-top"><h3>Bonchon เซ็นทรัลเฟสติวัล เชียงใหม่</h3></div>
-      <div class="badges"><span class="badge">ไก่ทอดเกาหลี</span><span class="badge">สาขาแรกในเชียงใหม่</span></div>
-      <p class="review">สาขาแรกของบอนชอนในเชียงใหม่ ไก่ทอดกรอบนอกนุ่มใน ซอสให้เลือกทั้งซอสหวานและซอสเผ็ด อยู่ในห้างเดินทางสะดวก มีอีกสาขาที่นิ่มซิตี้ด้วย</p>
-      <div class="meta">
-        <span>📍 ศูนย์การค้าเซ็นทรัลเฟสติวัล เชียงใหม่</span>
-      </div>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Bonchon%20Central%20Festival%20Chiang%20Mai" target="_blank" rel="noopener">📍 ดูแผนที่</a>
-        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=Bonchon%20Central%20Festival%20Chiang%20Mai" target="_blank" rel="noopener">🧭 นำทาง</a>
-        <a class="btn btn-text" href="https://www.bonchonthailand.com/locations" target="_blank" rel="noopener">ℹ️ สาขาทั้งหมด</a>
-      </div>
-    </div>
-  </div>
+        // ---- sea critters: whale, schools of fish, seahorse, shells, bubbles ----
+        var seaBg = document.getElementById("seaBg");
+        var reduceMotion =
+          window.matchMedia &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  <!-- ===== KHAO SOI ===== -->
-  <div class="section" id="khaosoi">
-    <div class="section-head"><h2>🍜 ข้าวซอย</h2></div>
-    <p class="section-note">ร้านเล็กๆ ของแท้ ที่คนเชียงใหม่กินกันมานาน</p>
+        function rand(min, max) {
+          return Math.random() * (max - min) + min;
+        }
 
-    <div class="card">
-      <div class="card-top"><h3>ข้าวซอยเสมอใจ</h3></div>
-      <div class="badges"><span class="badge">ร้านเล็กน่ารัก</span><span class="badge">เปิดมา 30+ ปี</span></div>
-      <p class="review">ร้านข้าวซอยเก่าแก่ น้ำแกงเข้มข้นกลมกล่อม บรรยากาศร้านเรียบง่ายสบายๆ แบบร้านท้องถิ่นแท้ๆ เหมาะกับมื้อเที่ยง</p>
-      <div class="meta">
-        <span>🕒 เปิดทุกวัน 08:00–17:00 น.</span>
-        <span>📍 391 ต.ฟ้าฮ่าม อ.เมืองเชียงใหม่</span>
-      </div>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AA%E0%B8%A1%E0%B8%AD%E0%B9%83%E0%B8%88%20391%20%E0%B8%9F%E0%B9%89%E0%B8%B2%E0%B8%AE%E0%B9%88%E0%B8%B2%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">📍 ดูแผนที่</a>
-        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AA%E0%B8%A1%E0%B8%AD%E0%B9%83%E0%B8%88%20391%20%E0%B8%9F%E0%B9%89%E0%B8%B2%E0%B8%AE%E0%B9%88%E0%B8%B2%E0%B8%A1%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">🧭 นำทาง</a>
-      </div>
-    </div>
+        if (seaBg && !reduceMotion) {
+          // whale only ever swims left-to-right, so its head/eye must lead
+          // on the right side, tail-fluke trailing on the left
+          var svgWhale =
+            '<svg viewBox="0 0 100 50" fill="currentColor"><path d="M95 30 C95 15 75 8 55 10 C35 12 20 18 8 22 C12 26 20 28 28 26 L26 34 C32 33 38 30 42 26 C52 30 70 32 82 28 C90 26 95 30 95 30 Z"/><circle cx="70" cy="17" r="5.2" fill="#fff"/><circle cx="71.4" cy="17" r="2.6" fill="#26333d"/><circle cx="72.4" cy="15.6" r="0.9" fill="#fff"/></svg>';
+          // cute fish: round body, big googly eye, blush, tail fin trailing
+          // on the left — nose points right so it actually swims nose-first
+          var svgFish =
+            '<svg viewBox="0 0 60 40"><path d="M16 20 L2 8 L8 20 L2 32 Z" fill="currentColor" opacity="0.85"/><path d="M14 20 C14 9 24 4 34 4 C46 4 54 11 54 20 C54 29 46 36 34 36 C24 36 14 31 14 20 Z" fill="currentColor"/><path d="M30 3 C32 -3 40 -3 42 3 C38 5.5 34 5.5 30 3 Z" fill="currentColor" opacity="0.9"/><path d="M20 25 C16 29 20 32 25 30 C22 28 20 26 20 25 Z" fill="currentColor" opacity="0.75"/><path d="M20 24 C20 29 26 32 34 32 C41 32 47 28 48 24 C42 29 26 29 20 24 Z" fill="#fff" opacity="0.22"/><circle cx="44" cy="16" r="5.2" fill="#fff"/><circle cx="45.6" cy="16" r="2.7" fill="#26333d"/><circle cx="46.6" cy="14.4" r="0.9" fill="#fff"/><circle cx="37" cy="23" r="3" fill="#ffb3ab" opacity="0.6"/></svg>';
+          var svgShell =
+            '<svg viewBox="0 0 30 24" fill="currentColor"><path d="M15 2 C6 6 2 14 2 20 L28 20 C28 14 24 6 15 2 Z M15 4 L15 20 M9 8 L11 20 M21 8 L19 20" stroke="#fff" stroke-width="0.6" opacity="0.9"/></svg>';
+          var svgSeahorse =
+            '<svg viewBox="0 0 30 60" fill="currentColor"><path d="M18 4 C22 2 24 6 22 9 C26 10 27 14 24 16 C28 18 28 24 24 26 C27 30 26 36 21 38 C24 42 22 48 17 49 C20 52 18 57 13 58 C9 59 5 56 6 52 C3 51 2 47 4 44 C1 42 1 37 4 35 C1 32 2 27 6 25 C8 20 7 15 10 11 C8 8 10 4 14 3 C15 2 17 2 18 4 Z"/><circle cx="17" cy="8" r="1.4" fill="#fff"/></svg>';
 
-    <div class="card">
-      <div class="card-top"><h3>ข้าวซอยแม่สาย</h3></div>
-      <div class="badges"><span class="badge">ร้านเล็กน่ารัก</span><span class="badge">คิวยาวแต่คุ้ม</span></div>
-      <p class="review">เส้นข้าวซอยกรอบเป็นเอกลักษณ์ รสชาติกลมกล่อม เป็นร้านเล็กๆ ที่คนต่อคิวกันเยอะ แนะนำให้ไปช่วงเช้าจะไม่ต้องรอนาน</p>
-      <div class="meta">
-        <span>🕒 จันทร์–เสาร์ 08:00–16:00 น.</span>
-        <span>📍 29/1 ซ.ราชพฤกษ์ ต.ช้างเผือก อ.เมืองเชียงใหม่</span>
-      </div>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2%20%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%9C%E0%B8%B7%E0%B8%AD%E0%B8%81%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">📍 ดูแผนที่</a>
-        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2%20%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%9C%E0%B8%B7%E0%B8%AD%E0%B8%81%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">🧭 นำทาง</a>
-      </div>
-    </div>
-  </div>
+          function addCritter(svg, cls, styles) {
+            var el = document.createElement("div");
+            el.className = "critter " + cls;
+            el.innerHTML = svg;
+            for (var key in styles) {
+              el.style[key] = styles[key];
+            }
+            seaBg.appendChild(el);
+            return el;
+          }
 
-  <!-- ===== FAR TRIP ===== -->
-  <div class="section" id="faraway">
-    <div class="section-head"><h2>🚗 ถ้ามีโอกาสไปไกลหน่อย</h2></div>
-    <p class="section-note">อยู่เชียงราย ไม่ใช่เชียงใหม่ ห่างไปประมาณ 3 ชม. — เก็บไว้เผื่อวันไหนอยากไปทริปยาว</p>
+          // one whale, drifting across a random height, unhurried
+          addCritter(svgWhale, "whale", {
+            top: rand(4, 90) + "vh",
+            width: rand(50, 74) + "px",
+            opacity: 0.26,
+            animation: "whale-swim " + rand(48, 62) + "s linear infinite",
+            animationDelay: -rand(0, 40) + "s",
+          });
 
-    <div class="card">
-      <div class="card-top"><h3>น้ำเงี้ยว ป้ารมย์ (แม่จัน)</h3></div>
-      <div class="badges"><span class="badge sea">ร้านเล็กในตำนาน</span></div>
-      <p class="review">ร้านน้ำเงี้ยวเล็กๆ ในอำเภอแม่จัน จ.เชียงราย รสชาติแบบดั้งเดิม เหมาะกับคนที่ชอบร้านท้องถิ่นเงียบๆ ไม่พลุกพล่าน</p>
-      <div class="meta"><span>📍 อ.แม่จัน จ.เชียงราย</span></div>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B8%A7%20%E0%B8%9B%E0%B9%89%E0%B8%B2%E0%B8%A3%E0%B8%A1%E0%B8%A2%E0%B9%8C%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B8%B1%E0%B8%99%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2" target="_blank" rel="noopener">📍 ดูแผนที่</a>
-        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B5%E0%B9%89%E0%B8%A7%20%E0%B8%9B%E0%B9%89%E0%B8%B2%E0%B8%A3%E0%B8%A1%E0%B8%A2%E0%B9%8C%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B8%B1%E0%B8%99%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2" target="_blank" rel="noopener">🧭 นำทาง</a>
-      </div>
-    </div>
+          // fish swim in tight little schools — same lane, same speed,
+          // just nose-to-tail staggered, so they read as a group, not
+          // scattered random dots
+          var schoolPlans = [
+            {
+              count: 3,
+              dir: "lr",
+              top: 12,
+              spread: 1.5,
+              dur: 26,
+              size: 22,
+              color: "var(--sea)",
+            },
+            {
+              count: 3,
+              dir: "rl",
+              top: 40,
+              spread: 2,
+              dur: 30,
+              size: 24,
+              color: "var(--sea-deep)",
+            },
+            {
+              count: 2,
+              dir: "lr",
+              top: 64,
+              spread: 1.5,
+              dur: 28,
+              size: 19,
+              color: "var(--sea-light)",
+            },
+          ];
+          schoolPlans.forEach(function (school) {
+            for (var i = 0; i < school.count; i++) {
+              var stagger = (school.dur / school.count) * i + rand(-0.4, 0.4);
+              addCritter(svgFish, "fish", {
+                top: school.top + rand(-school.spread, school.spread) + "vh",
+                width: school.size - i * 1.5 + "px",
+                opacity: (0.55 - i * 0.05).toFixed(2),
+                color: school.color,
+                animation:
+                  "fish-swim-" +
+                  school.dir +
+                  " " +
+                  school.dur +
+                  "s ease-in-out infinite",
+                animationDelay: -stagger + "s",
+              });
+            }
+          });
 
-    <div class="card">
-      <div class="card-top"><h3>น้ำเงี้ยว ป้าสุข (แม่สาย)</h3></div>
-      <div class="badges"><span class="badge sea">ร้านเล็กในตำนาน</span></div>
-      <p class="review">ร้านน้ำเงี้ยวเล็กๆ ในอำเภอแม่สาย จ.เชียงราย ติดชายแดน รสชาติเข้มข้นแบบต้นตำรับ</p>
-      <div class="meta"><span>📍 อ.แม่สาย จ.เชียงราย</span></div>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B5%E0%B9%89%E0%B8%A7%20%E0%B8%9B%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B8%E0%B8%82%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2" target="_blank" rel="noopener">📍 ดูแผนที่</a>
-        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B5%E0%B9%89%E0%B8%A7%20%E0%B8%9B%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B8%E0%B8%82%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2" target="_blank" rel="noopener">🧭 นำทาง</a>
-      </div>
-    </div>
-  </div>
+          // one seahorse, hovering and bobbing gently in place (not swimming across)
+          addCritter(svgSeahorse, "seahorse", {
+            top: rand(22, 70) + "vh",
+            left: rand(8, 88) + "%",
+            width: rand(20, 28) + "px",
+            opacity: 0.4,
+            animationDuration: rand(8, 11) + "s",
+            animationDelay: -rand(0, 8) + "s",
+          });
 
-  <footer>
-    <div class="sign">🌊 แวะกินเผื่อมีโอกาสนะ</div>
-    <div>อัปเดตล่าสุด กรกฎาคม 2026 · เวลาเปิด-ปิดอาจเปลี่ยนแปลง แนะนำโทรเช็คก่อนไปนะ</div>
-  </footer>
+          // a few shells scattered and resting, swaying slow and easy
+          var shellCount = 4;
+          for (var j = 0; j < shellCount; j++) {
+            var rot = rand(-12, 12);
+            var el = document.createElement("div");
+            el.className = "critter shell";
+            el.innerHTML = svgShell;
+            el.style.top = rand(5, 92) + "vh";
+            el.style.left = rand(2, 92) + "%";
+            el.style.width = rand(16, 24) + "px";
+            el.style.opacity = rand(0.28, 0.45).toFixed(2);
+            el.style.setProperty("--rot", rot + "deg");
+            el.style.transform = "rotate(" + rot + "deg)";
+            el.style.animation =
+              "shell-sway " + rand(9, 13) + "s ease-in-out infinite";
+            el.style.animationDelay = -rand(0, 9) + "s";
+            if (Math.random() < 0.5) el.style.transform += " scaleX(-1)";
+            seaBg.appendChild(el);
+          }
 
-</div>
-</body>
+          // a handful of slow, quiet bubbles drifting up here and there
+          var bubbleCount = 5;
+          for (var k = 0; k < bubbleCount; k++) {
+            var size = rand(4, 9);
+            var bubble = document.createElement("span");
+            bubble.className = "bubble";
+            bubble.style.left = rand(2, 96) + "%";
+            bubble.style.bottom = rand(0, 90) + "vh";
+            bubble.style.width = size + "px";
+            bubble.style.height = size + "px";
+            bubble.style.animationDuration = rand(10, 17) + "s";
+            bubble.style.animationDelay = -rand(0, 15) + "s";
+            seaBg.appendChild(bubble);
+          }
+        }
+
+        // ---- scroll = dive deeper: tiny ambient tint + a cute depth-gauge readout ----
+        // (modeled after real dive-themed sites like iutopi.com, which shows a
+        // "sea.level -X mts" readout as you scroll, rather than washing the
+        // whole page dark — keeps it playful and legible instead of murky)
+        var depthOverlay = document.getElementById("depthOverlay");
+        var islandLeft = document.querySelector(".island-left");
+        var islandRight = document.querySelector(".island-right");
+        var depthGauge = document.getElementById("depthGauge");
+        var depthGaugeText = document.getElementById("depthGaugeText");
+
+        function updateDepth() {
+          var doc = document.documentElement;
+          var scrollTop = window.pageYOffset || doc.scrollTop || 0;
+          var scrollable = doc.scrollHeight - window.innerHeight;
+          var fraction = scrollable > 0 ? scrollTop / scrollable : 0;
+          fraction = Math.max(0, Math.min(1, fraction));
+          if (depthOverlay) {
+            depthOverlay.style.opacity = (fraction * 0.1).toFixed(2);
+          }
+          if (islandLeft) {
+            islandLeft.style.transform =
+              "translateY(" + (fraction * 14).toFixed(1) + "px)";
+          }
+          if (islandRight) {
+            islandRight.style.transform =
+              "scaleX(-1) translateY(" + (fraction * 10).toFixed(1) + "px)";
+          }
+          if (depthGauge && depthGaugeText) {
+            if (fraction > 0.03) {
+              depthGauge.classList.add("visible");
+              depthGaugeText.textContent =
+                "ลึก " + Math.round(fraction * 45) + " ม.";
+            } else {
+              depthGauge.classList.remove("visible");
+            }
+          }
+        }
+
+        updateDepth();
+        window.addEventListener("scroll", updateDepth, { passive: true });
+        window.addEventListener("resize", updateDepth);
+      })();
+    </script>
+  </body>
 </html>
